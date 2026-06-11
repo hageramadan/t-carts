@@ -5,10 +5,12 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
-
+import ContactForm from "./ContactForm";
+import { useCountry } from "@/contexts/CountryContext";
 const FAQSection = () => {
   const { language, t } = useLanguage();
   const [openIndex, setOpenIndex] = useState(null);
+  const { whatsappNumber } = useCountry();
   const isRTL = language === "ar";
 
   const faqs = t("faq.questions");
@@ -16,12 +18,53 @@ const FAQSection = () => {
   const toggleQuestion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  const countries = [
+    {
+      name: language === "ar" ? "السعودية" : "Saudi Arabia",
+      code: "+966",
+      flag: "🇸🇦",
+      placeholder: "512345678",
+    },
+    {
+      name: language === "ar" ? "مصر" : "Egypt",
+      code: "+20",
+      flag: "🇪🇬",
+      placeholder: "1012345678",
+    },
+    {
+      name: language === "ar" ? "اليمن" : "Yemen",
+      code: "+967",
+      flag: "🇾🇪",
+      placeholder: "712345678",
+    },
+    {
+      name: language === "ar" ? "العراق" : "Iraq",
+      code: "+964",
+      flag: "🇮🇶",
+      placeholder: "7701234567",
+    },
+    {
+      name: language === "ar" ? "الجزائر" : "Algeria",
+      code: "+213",
+      flag: "🇩🇿",
+      placeholder: "551234567",
+    },
+  ];
+  const handleFormSubmit = () => {
+    // console.log("Form submitted from parent:", data);
+    // هنا يمكنك إضافة منطق الإرسال الفعلي (API call)
+  };
 
   return (
-    <section id="faq" className="pt-3 md:pt-5 overflow-hidden bg-[#EDF3F9]">
+    <section id="faq" className="py-16 overflow-hidden bg-[#E8F4F4]">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="flex md:items-start items-center gap-8 lg:gap-12 justify-between">
-          
+        {/* العنوان العلوي للسكشن */}
+            <div className="mb-8 text-center lg:text-start">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#025049] mb-2">
+                {t("faq.title")}
+              </h1>
+            </div>
+        <div className="flex flex-col md:flex-row md:items-start items-center gap-8 lg:gap-12 justify-between">
           {/* المحتوى في اليمين - عرض 760px كحد أقصى */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -30,12 +73,7 @@ const FAQSection = () => {
             viewport={{ once: true }}
             className="flex-1 w-full lg:max-w-[760px]"
           >
-            {/* العنوان العلوي للسكشن */}
-            <div className="mb-8 text-center lg:text-start">
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#070D14] mb-2">
-                {t("faq.title")}
-              </h1>
-            </div>
+            
 
             {/* قائمة الأسئلة */}
             <div className="space-y-6 gap-[24px]">
@@ -48,9 +86,10 @@ const FAQSection = () => {
                   viewport={{ once: true }}
                   className={`
                     rounded-2xl shadow-md transition-all duration-300 overflow-hidden 
-                    ${openIndex === index 
-                      ? 'bg-[#4886C6]' 
-                      : 'bg-white hover:shadow-lg'
+                    ${
+                      openIndex === index
+                        ? "bg-[#38CB89]"
+                        : "bg-white hover:shadow-lg"
                     }
                   `}
                 >
@@ -59,33 +98,55 @@ const FAQSection = () => {
                     onClick={() => toggleQuestion(index)}
                     className="w-full px-5 py-4 md:px-6 md:py-5 flex justify-between items-center gap-4 text-right group"
                   >
-                    <span className={`
+                    <span
+                      className={`
                       text-[14px] md:text-lg font-semibold flex-1 transition-colors duration-300
-                      ${openIndex === index 
-                        ? 'text-white' 
-                        : 'text-gray-800'
-                      }
-                      ${isRTL ? 'text-right' : 'text-left'}
-                    `}>
+                      ${openIndex === index ? "text-white" : "text-gray-800"}
+                      ${isRTL ? "text-right" : "text-left"}
+                    `}
+                    >
                       {faq.question}
                     </span>
-                    
+
                     {/* الأيقونة */}
-                    <div className={`
+                    <div
+                      className={`
                       w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center
                       transition-all duration-300 flex-shrink-0
-                      ${openIndex === index 
-                        ? 'text-white' 
-                        : 'text-[#4584C5] group-hover:bg-gray-200'
+                      ${
+                        openIndex === index
+                          ? "text-white"
+                          : "text-[#068377] group-hover:bg-gray-200"
                       }
-                    `}>
+                    `}
+                    >
                       {openIndex === index ? (
-                        <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M20 12H4" />
+                        <svg
+                          className="w-4 h-4 md:w-5 md:h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M20 12H4"
+                          />
                         </svg>
                       ) : (
-                        <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
+                        <svg
+                          className="w-4 h-4 md:w-5 md:h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M12 4v16m8-8H4"
+                          />
                         </svg>
                       )}
                     </div>
@@ -117,25 +178,23 @@ const FAQSection = () => {
           {/* الصورة في الشمال */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-              whileHover={{ 
-      y: [-2, -10],  // فقط تطلع لفوق وتنزل مكانها مرة واحدة
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }}
+            whileHover={{
+              y: [-2, -10], // فقط تطلع لفوق وتنزل مكانها مرة واحدة
+              transition: {
+                duration: 0.5,
+                ease: "easeOut",
+              },
+            }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="hidden lg:flex w-full lg:w-[400px] flex-shrink-0 mx-auto lg:mx-0"
+            className="flex w-full lg:w-[424px] flex-shrink-0 mx-auto lg:mx-0"
           >
-            <div className="relative lg:w-[400px] lg:h-[400px] mx-auto">
-              <Image
-                src="/images/faq/faq.png"
-                alt="FAQ Illustration"
-                fill
-                sizes="400px"
-                className="object-contain"
+            <div className="relative lg:w-[424px] mx-auto">
+              <ContactForm
+                countries={countries}
+                onSubmit={handleFormSubmit}
+                whatsappNumber={whatsappNumber}
               />
             </div>
           </motion.div>

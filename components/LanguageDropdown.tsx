@@ -37,9 +37,9 @@ const LanguageDropdown = () => {
       {/* Dropdown Trigger */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-white"
+        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-[#068377]"
       >
-        <FaGlobe className="text-sm" />
+        {/* <FaGlobe className="text-sm" /> */}
         <span className="text-sm font-medium">
           {currentLanguage?.name}
         </span>
@@ -61,13 +61,13 @@ const LanguageDropdown = () => {
                 key={lang.code}
                 onClick={() => handleLanguageChange(lang.code as 'ar' | 'en')}
                 className={`w-full flex items-center md:gap-3 px-4 py-3 text-right hover:bg-gray-50 transition-colors ${
-                  language === lang.code ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                  language === lang.code ? 'bg-[#068377]/10 text-[#068377]' : 'text-gray-700'
                 }`}
               >
                 
                 <span className="flex-1 font-medium">{lang.name}</span>
                 {language === lang.code && (
-                  <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 text-[#068377]" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 )}

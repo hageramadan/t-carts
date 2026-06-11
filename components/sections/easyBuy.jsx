@@ -6,7 +6,7 @@ import { useCountry } from "@/contexts/CountryContext";
 import Image from "next/image";
 import { useState } from "react";
 
-const Hero = () => {
+const EasyBuy = () => {
   const { language } = useLanguage();
   const { whatsappNumber } = useCountry();
   const [isHovered, setIsHovered] = useState(false);
@@ -14,10 +14,9 @@ const Hero = () => {
   // Translations
   const translations = {
     ar: {
-      badge: "التحول الرقمي في السعودية",
-      title: `أمتلك منظومة بيع متكاملة.. تملكها بالكامل  ...\nبدون اشتراكات أو عمولات`,
-      description:
-        "أمتلك منظومة بيع متكاملة.. تملكها بالكامل بدون اشتراكات أو عمولات",
+      badge: `أداء أسرع لنمو أكبر.. لوحة تحكم ذكية تمنحك الرؤية الكاملة للتوسع.`,
+      title: `تجربة شراء بلا تعقيد`,
+      description: `كلما قلت خطوات الشراء، زادت مبيعاتك. وفرنا لعملائك واجهة دفع سريعة وبسيطة، متوافقة تماماً مع الجوال، لتضمن إتمام كل عملية شراء من أي زائر يدخل متجرك بأقل مجهود`,
       cta: "ابدأ متجرك الآن",
       demo: "شاهد النماذج",
       stats1: "مشروع منجز",
@@ -52,17 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 backdrop-blur-sm bg-[#E8F6F6]"
-          style={{
-            background: "#E8F6F6",
-          }}
-        />
-      </div>
-
+    <section className="relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16 ">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 md:gap-12">
           {/* Content Container */}
@@ -74,16 +63,14 @@ const Hero = () => {
           >
             <motion.div
               className="px-4 md:px-6 lg:px-10 w-full"
-              initial={{ y: 0 }}
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+            
             >
               {/* Main Title */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[46px] font-bold mb-4 md:mb-6 text-[#012E29] whitespace-pre-line"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] font-bold mb-4  text-[#011917] whitespace-pre-line"
                 style={{ lineHeight: "1.7" }}
               >
                 {t.title}
@@ -94,8 +81,9 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-base sm:text-lg md:text-xl lg:text-[24px] text-[#4A4A4A] mb-8 md:mb-10 leading-relaxed"
-              >
+                className="text-base sm:text-lg md:text-xl lg:text-[24px] text-[#353636] mb-2 md:mb-5 leading-relaxed"
+             style={{lineHeight:1.6}}
+             >
                 {t.description}
               </motion.p>
 
@@ -108,7 +96,7 @@ const Hero = () => {
               >
                 <motion.button
                   onClick={handleWhatsAppClick}
-                  className="flex items-center bg-gradient-to-br from-[#012E29] to-[#00A898] hover:from-[#012E29] hover:to-[#00A898] justify-center gap-2 px-8 md:px-10 py-3 md:py-4 rounded-lg text-white font-semibold text-base md:text-lg"
+                  className="flex items-center bg-[#068377] hover:from-[#012E29] hover:to-[#00A898] justify-center gap-2 px-8 md:px-10 py-3 md:py-4 rounded-lg text-white font-semibold text-base md:text-lg"
                   style={{
                     boxShadow: "0px 4px 15px #00000040",
                     minWidth: "180px",
@@ -118,17 +106,9 @@ const Hero = () => {
                 >
                   {t.cta}
                 </motion.button>
-                <motion.a
-                  href="#work"
-                  whileTap={{ scale: 0.98 }}
-                  className="flex items-center justify-center gap-2 px-8 md:px-10 py-3 md:py-4 rounded-lg bg-white text-[#012E29] font-semibold transition-all text-base md:text-lg"
-                >
-                  {t.demo}
-                </motion.a>
               </motion.div>
             </motion.div>
           </motion.div>
-
           {/* Container for images - same height as content */}
           <div
             className="w-full lg:w-1/2 relative flex items-center justify-center"
@@ -138,7 +118,7 @@ const Hero = () => {
             <div className="relative w-full h-full flex items-center justify-center py-8 md:py-12">
               {/* Main Image */}
               <motion.div
-                className="relative z-10 w-full max-w-[500px] md:max-w-[600px] lg:max-w-full mx-auto"
+                className="relative z-10 w-full max-w-[500px] md:max-w-[600px]  mx-auto"
                 animate={{
                   y: isHovered ? -15 : 0,
                 }}
@@ -148,56 +128,13 @@ const Hero = () => {
                 }}
               >
                 <Image
-                  src="/images/hero/hero.png"
+                  src="/images/easybuy/easy.png"
                   alt="Hero Image"
-                  width={707}
-                  height={472}
-                  quality={100}
+                  width={628}
+                  height={488}
+                  quality={90}
                   className="w-full h-auto object-contain"
                   priority
-                />
-              </motion.div>
-
-              {/* Store Image 1 - Left side */}
-              <motion.div
-                className="absolute top-[55%] md:top-[60%] left-0 md:-left-4 z-20"
-                animate={{
-                  y: isHovered ? -40 : 0,
-                }}
-                transition={{
-                  duration: 0.7,
-                  ease: "easeInOut",
-                }}
-              >
-                <Image
-                  src="/images/hero/store.png"
-                  alt="Store Icon"
-                  width={72}
-                  height={91}
-                  quality={100}
-                  className="w-[60px] h-[76px] md:w-[72px] md:h-[91px] object-contain"
-                />
-              </motion.div>
-
-              {/* Store Image 2 - Right side */}
-              <motion.div
-                className="absolute top-[15%] md:top-[20%] right-0 md:-right-4 z-20"
-                animate={{
-                  y: isHovered ? 40 : 0,
-                  x: isHovered ? 30 : 0,
-                }}
-                transition={{
-                  duration: 0.7,
-                  ease: "easeInOut",
-                }}
-              >
-                <Image
-                  src="/images/hero/store.png"
-                  alt="Store Icon"
-                  width={72}
-                  height={90}
-                  quality={100}
-                  className="w-[60px] h-[76px] md:w-[72px] md:h-[91px] object-contain"
                 />
               </motion.div>
             </div>
@@ -208,4 +145,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default EasyBuy;

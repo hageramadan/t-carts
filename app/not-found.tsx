@@ -18,7 +18,7 @@ export default function NotFound() {
           transition={{ duration: 0.8, type: "spring", bounce: 0.5 }}
           className="relative mb-8"
         >
-          <h1 className="text-9xl md:text-[12rem] text-[#070D14] font-bold bg-gradient-to-r from-[#4584C5] to-[#21405F] bg-clip-text text-transparent">
+          <h1 className="text-9xl md:text-[12rem] text-[#025049] font-bold bg-gradient-to-brfrom-[#068377] to-[#21405F] bg-clip-text text-transparent">
             404
           </h1>
           <motion.div

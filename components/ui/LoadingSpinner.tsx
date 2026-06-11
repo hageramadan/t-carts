@@ -14,14 +14,14 @@ const LoadingSpinner = ({ fullScreen = false, message }: LoadingSpinnerProps) =>
       <div className="relative">
         {/* الحلقة الخارجية */}
         <motion.div
-          className="w-24 h-24 rounded-full border-4 border-[#4584C5]/20"
+          className="w-24 h-24 rounded-full border-4 border-[#068377]/20"
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
         />
         
         {/* الحلقة المتوسطة */}
         <motion.div
-          className="absolute top-0 left-0 w-24 h-24 rounded-full border-4 border-[#4584C5]/40 border-t-[#4584C5] border-r-transparent border-b-transparent border-l-transparent"
+          className="absolute top-0 left-0 w-24 h-24 rounded-full border-4 border-[#068377]/40 border-t-[#068377] border-r-transparent border-b-transparent border-l-transparent"
           animate={{ rotate: 360 }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
         />
@@ -35,7 +35,7 @@ const LoadingSpinner = ({ fullScreen = false, message }: LoadingSpinnerProps) =>
 
         {/* النقطة المركزية */}
         <motion.div
-          className="absolute top-1/2 left-1/2 w-3 h-3 bg-gradient-to-r from-[#4584C5] to-[#21405F] rounded-full -translate-x-1/2 -translate-y-1/2"
+          className="absolute top-1/2 left-1/2 w-3 h-3 bg-gradient-to-brfrom-[#068377] to-[#21405F] rounded-full -translate-x-1/2 -translate-y-1/2"
           animate={{ scale: [1, 1.5, 1] }}
           transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -65,7 +65,7 @@ const LoadingSpinner = ({ fullScreen = false, message }: LoadingSpinnerProps) =>
               key={i}
               className="w-2.5 h-2.5 rounded-full"
               style={{
-                background: `linear-gradient(135deg, #4584C5, #21405F)`
+                background: `linear-gradient(135deg, #068377, #21405F)`
               }}
               animate={{ 
                 y: [0, -12, 0],

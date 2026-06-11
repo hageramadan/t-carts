@@ -16,9 +16,10 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "تواجد Tawajood | أفضل شركة برمجة وتطوير مواقع وتطبيقات  ",
+  title: "متجر إلكتروني متكامل -  أمتلك منظومة بيع متكاملة.. تملكها بالكامل بدون اشتراكات أو عمولات",
  
-  description: "شركة تواجد للبرمجة والتطوير تقدم حلولاً رقمية متكاملة: تصميم وتطوير مواقع، تطبيقات جوال iOS و Android، أنظمة إدارة المحتوى، متاجر إلكترونية، وخدمات SEO. نضمن لك الجودة والابتكار.",
+  description:`أمتلك منظومة بيع متكاملة.. تملكها بالكامل  ...
+بدون اشتراكات أو عمولات` ,
      icons: {
     icon: [
       { url: "/logo2.png", type: "image/png" },
@@ -67,11 +68,11 @@ export default function RootLayout({
          <CountryProvider>
             <LanguageProvider>
                 <div className="min-h-screen flex flex-col">
-                  <SubNavbar />
+                  {/* <SubNavbar /> */}
                   <Navbar />
                   <main className="flex-1">{children}</main>
                   <Footer />
-                  <FloatingWhatsApp />
+                  {/* <FloatingWhatsApp /> */}
                 </div>
               </LanguageProvider>
          </CountryProvider>

@@ -14,12 +14,12 @@ export default function PrivacyPolicyPage() {
 
   // Icons for each section
   const sectionIcons = [
-    <FaDatabase className="text-[#4886C6] text-2xl" key="1"/>,
-    <FaUserSecret className="text-[#4886C6] text-2xl" key="2"/>,
-    <FaShieldAlt className="text-[#4886C6] text-2xl" key="3"/>,
-    <FaShareAlt className="text-[#4886C6] text-2xl" key="4"/>,
-    <FaCookie className="text-[#4886C6] text-2xl" key="5" />,
-    <FaSyncAlt className="text-[#4886C6] text-2xl" key="6"/>
+    <FaDatabase className="text-[#38CB89] text-2xl" key="1"/>,
+    <FaUserSecret className="text-[#38CB89] text-2xl" key="2"/>,
+    <FaShieldAlt className="text-[#38CB89] text-2xl" key="3"/>,
+    <FaShareAlt className="text-[#38CB89] text-2xl" key="4"/>,
+    <FaCookie className="text-[#38CB89] text-2xl" key="5" />,
+    <FaSyncAlt className="text-[#38CB89] text-2xl" key="6"/>
   ];
 
   const privacyData = t("privacyPolicy");
@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-2"
         >
-          <h1 className="text-2xl md:text-4xl font-extrabold text-[#070D14] mb-4">
+          <h1 className="text-2xl md:text-4xl font-extrabold text-[#025049] mb-4">
             {privacyData.title}
           </h1>
         
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
                   {sectionIcons[index % sectionIcons.length]}
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-[#070D14] mb-3">
+                  <h2 className="text-xl font-bold text-[#025049] mb-3">
                     {section.title}
                   </h2>
                   <p className="text-gray-600 leading-relaxed text-sm md:text-base">

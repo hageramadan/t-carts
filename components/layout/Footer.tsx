@@ -9,6 +9,7 @@ import Link from "next/link";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { FaLocationDot } from "react-icons/fa6";
 import { useCountry } from "@/contexts/CountryContext";
+import { EmailSubscribe } from "../sections/EmailSubscribe";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -67,14 +68,14 @@ const Footer = () => {
  const addresses = t("addressesList");
 
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-6 mt-auto">
+    <footer className="bg-[#001110] text-white pt-12 pb-6 mt-auto">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* العمود الأول - الشعار والوصف */}
           <div>
-            <div className="w-[264px] h-[177px] mb-4">
+            <div className="w-[100px] h-[75px] mb-4">
               <Image
-                src="/logo2.png"
+                src="/logof.png"
                 alt="Logo"
                 loading="eager"
                 width={280}
@@ -82,7 +83,7 @@ const Footer = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-white text-sm md:text-[16px] leading-relaxed mb-4">
+            <p className="text-white max-w-64 text-sm md:text-[16px] leading-relaxed mb-4">
               {t("footer.description")}
             </p>
           </div>
@@ -133,38 +134,7 @@ const Footer = () => {
                 {t("footer.followUs")}
               </h4>
 
-              <div className="space-y-6">
-                {/* أرقام الهاتف */}
-                {phoneNumbers.map((phone, index) => (
-                  <div key={index} className="flex items-center gap-3 md:gap-4">
-                    <BiSolidPhoneCall className="w-5 h-5 md:w-6 md:h-6 text-[#ffffff]" />
-                    <p className="text-lg font-semibold" dir="rtl">{phone}</p>
-                  </div>
-                ))}
-
-                {/* الإيميلات */}
-                {emails.map((email, index) => (
-                  <div key={index} className="flex items-start gap-3 md:gap-4">
-                    <MdEmail className="w-5 h-5 md:w-6 md:h-6 text-[#ffffff]" />
-                    <p className="text-base font-medium dir-ltr">{email}</p>
-                  </div>
-                ))}
-
-                {/* العناوين */}
-                <div className="space-y-3 text-sm">
-                  {addresses.map((address:any, index:any) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-3 md:gap-4"
-                    >
-                      <FaLocationDot className="w-5 h-5 md:w-6 md:h-6 text-[#ffffff]" />
-                      <p className="text-white leading-relaxed text-[16px]">
-                        {address}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <EmailSubscribe />
             </div>
 
             {/* صور السوشيال ميديا */}

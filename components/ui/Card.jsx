@@ -4,7 +4,7 @@ const Card = ({ children, className = '' }) => {
   return (
     <motion.div
       whileHover={{ y: -5 }}
-      className={`bg-white rounded-2xl p-6  ${className}`}
+      className={`bg-white rounded-2xl p-6 border border-[#ECECEC] ${className}`}
     >
       {children}
     </motion.div>

@@ -51,7 +51,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4584C5;
+  background: #068377;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
@@ -68,7 +68,7 @@ html {
 /* دعم Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #4584C5 #f0f4f8;
+  scrollbar-color: #068377 #f0f4f8;
 }
 @layer utilities {
   .font-cairo {
