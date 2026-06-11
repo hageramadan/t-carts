@@ -3,7 +3,6 @@ import { Cairo } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Script from "next/script";
-import SubNavbar from "@/components/layout/SubNavbar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";

@@ -6,7 +6,6 @@ import {  lazy } from 'react';
 import FastSEO from '@/components/sections/fastSEO';
 import DataC from '@/components/sections/dataC';
 import FAQSection from '@/components/sections/FAQ';
-import ContactSection from '@/components/sections/Contact';
 import EasyBuy from '@/components/sections/easyBuy';
 import FirstSearch from '@/components/sections/firstSearch';
 import NeedToSuccess from '@/components/sections/needToSuccess';
