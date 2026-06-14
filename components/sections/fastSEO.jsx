@@ -67,13 +67,13 @@ const FastSEO = () => {
           </h1>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 md:gap-12">
+        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 md:gap-12 ">
           {/* Content Container */}
           <motion.div
             initial={{ opacity: 0, x: language === "ar" ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 flex items-center"
+            className="w-full lg:w-1/2 flex items-center order-1 md:order-2"
           >
             <motion.div
               className="px-4 md:px-6 lg:px-10 w-full"
@@ -127,7 +127,7 @@ const FastSEO = () => {
 
           {/* Container for images - same height as content */}
           <div
-            className="w-full lg:w-1/2 relative flex items-center justify-center"
+            className="w-full lg:w-1/2 relative flex items-center justify-center order-2 md:order-1"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >

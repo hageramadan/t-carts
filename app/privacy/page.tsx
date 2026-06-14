@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
   return (
     <main id="privacy" className="min-h-screen bg-gradient-to-br from-gray-50 to-white  py-6"
     >
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-1 md:px-8">
         
         {/* Hero Section */}
         <motion.div

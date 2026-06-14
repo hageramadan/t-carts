@@ -54,7 +54,7 @@ const designsData = [
 // مكون البادج
 const Badge = ({ text, color }: { text: string; color: string }) => {
   return (
-    <div className={`absolute top-3 right-3 z-10 ${color} text-white px-3 py-1.5 rounded-[8px] text-sm font-semibold shadow-md`}>
+    <div className={`absolute top-3 right-3 z-10 ${color} text-white px-3 py-1.5 rounded-[8px] text-xs md:text-sm font-semibold shadow-md`}>
       {text}
     </div>
   );
@@ -118,7 +118,7 @@ const Card = ({
           <p className="text-[12px] md:text-[18px] mb-2 text-[#838383] text-center leading-relaxed">
             {description}
           </p>
-          <div className=" absolute top-[-4rem] left-1/3 group-hover:flex hidden">
+          <div className=" absolute top-[-4rem] left-4 md:left-1/3 group-hover:flex hidden">
           <Link href="/" aria-label="go to website" className="flex items-center gap-3 bg-[#03645B] text-white justify-center w-fit px-4 py-2 rounded-lg">
            <span className="text-base md:text-lg">معاينة</span>
            <IoLinkOutline  className="w-5 h-5 md:w-7 md:h-7"/>
@@ -220,14 +220,14 @@ export default function ChooseDesign() {
           </p>
           
           {/* الوصف الثاني */}
-          <p className="text-sm md:text-lg font-semibold text-white bg-gradient-to-b py-2 rounded-full from-[#38CB89] to-[#419F75] max-w-2xl mx-auto">
+          <p className="text-xs md:text-lg font-semibold text-white bg-gradient-to-b py-2 rounded-full from-[#38CB89] to-[#419F75] max-w-2xl mx-auto">
             {t("chooseDesign.description2")}
           </p>
         </motion.div>
       </div>
 
       {/* حاوية التصاميم */}
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-1 md:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"

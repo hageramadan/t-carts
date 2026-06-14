@@ -52,7 +52,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16">
+    <section id="about" className="relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div
@@ -83,8 +83,8 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[46px] font-bold mb-4 md:mb-6 text-[#012E29] whitespace-pre-line"
-                style={{ lineHeight: "1.7" }}
+                className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[46px] font-bold mb-4 md:mb-6 text-[#012E29] whitespace-pre-line"
+                style={{ lineHeight: "1.4" }}
               >
                 {t.title}
               </motion.h1>

@@ -57,7 +57,7 @@ const FAQSection = () => {
 
   return (
     <section id="faq" className="py-16 overflow-hidden bg-[#E8F4F4]">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-1 md:px-8">
         {/* العنوان العلوي للسكشن */}
             <div className="mb-8 text-center lg:text-start">
               <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#025049] mb-2">

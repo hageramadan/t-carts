@@ -54,7 +54,7 @@ const GooglePlay = () => {
             initial={{ opacity: 0, x: language === "ar" ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 flex items-center"
+            className="w-full lg:w-1/2 flex items-center "
           >
             <motion.div className="px-4 md:px-6 lg:px-10 w-full ">
               {/* Main Title */}

@@ -69,7 +69,7 @@ export function StoreFeaturesSection() {
   ];
 
   return (
-    <section className="py-8 md:py-16 container mx-auto px-8" dir={language === "ar" ? "rtl" : "ltr"}>
+    <section className="py-8 md:py-16 container mx-auto px-4 md:px-8" dir={language === "ar" ? "rtl" : "ltr"}>
       {/* عنوان القسم */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -92,7 +92,7 @@ export function StoreFeaturesSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-10 auto-rows-[400px]"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 auto-rows-[400px]"
       >
         {featuresData.map((feature, index) => {
           const layout = getFeatureLayout(index);
