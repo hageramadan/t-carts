@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { FaBars, FaTimes, FaArrowRight } from "react-icons/fa";
+import { FaBars, FaTimes, FaGlobe, FaChevronDown } from "react-icons/fa";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useCountry } from "@/contexts/CountryContext";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import LanguageDropdown from "../LanguageDropdown";
@@ -15,11 +15,31 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [activeLink, setActiveLink] = useState<string>();
-  const { language } = useLanguage();
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
   const { whatsappNumber } = useCountry();
   const pathname = usePathname();
   const router = useRouter();
   const isScrolling = useRef(false);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
+
+  // إغلاق dropdown عند النقر خارجه
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(event.target as Node)) {
+        setIsLangDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // دالة تبديل اللغة
+  const changeLanguage = (lang: any) => {
+    setLanguage(lang);
+    localStorage.setItem("language", lang);
+    setIsLangDropdownOpen(false);
+  };
 
   // دالة فتح الواتساب
   const handleWhatsAppClick = () => {
@@ -37,7 +57,7 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navbarHeight = 80; // ارتفاع الناف بار
+      const navbarHeight = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - navbarHeight;
 
@@ -47,7 +67,6 @@ const Navbar = () => {
         behavior: "smooth",
       });
 
-      // إعادة تعيين الـ flag بعد انتهاء التمرير
       setTimeout(() => {
         isScrolling.current = false;
       }, 1000);
@@ -58,10 +77,8 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      // منع تحديث الـ active link أثناء التمرير اليدوي للسكشن
       if (isScrolling.current) return;
 
-      // Check which section is in view
       const sections = [
         "about",
         "services",
@@ -70,7 +87,7 @@ const Navbar = () => {
         "faq",
         "contact",
       ];
-      const scrollPosition = window.scrollY + 120; // Offset for navbar
+      const scrollPosition = window.scrollY + 120;
 
       let currentSection = "";
       for (const section of sections) {
@@ -92,7 +109,7 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Call once to set initial active link
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeLink]);
@@ -109,7 +126,7 @@ const Navbar = () => {
   }, [isOpen]);
 
   const navLinks = [
-    { key: "about", href: "/#about", nameAr: "لماذا T CARTS؟", nameEn: "About" },
+    { key: "about", href: "/#about", nameAr: "لماذا T CARTS؟", nameEn: "Why T CARTS?" },
     {
       key: "services",
       href: "/#services",
@@ -122,7 +139,6 @@ const Navbar = () => {
       nameAr: "النماذج",
       nameEn: "Projects",
     },
-   
     { key: "faq", href: "/#faq", nameAr: "الاسئلة", nameEn: "FAQ" },
     {
       key: "contact",
@@ -137,29 +153,23 @@ const Navbar = () => {
     linkKey: string,
     href: string,
   ) => {
-    e.preventDefault(); // منع السلوك الافتراضي للـ Link
+    e.preventDefault();
 
-    // استخراج الـ section id من الـ href
     const sectionId = href.split("#")[1];
 
-    // تغيير الـ active link فوراً
     setActiveLink(linkKey);
     setIsOpen(false);
 
-    // لو احنا في صفحة غير الصفحة الرئيسية
     if (pathname !== "/") {
       router.push(href);
-      // ننتظر شوية عشان الصفحة تتحمل وبعدين نتمركز للسكشن
       setTimeout(() => {
         scrollToSection(sectionId);
       }, 100);
     } else {
-      // لو في الصفحة الرئيسية، نتمركز للسكشن مباشرة
       scrollToSection(sectionId);
     }
   };
 
-  // دالة للتعامل مع اللوجو
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     if (pathname === "/") {
@@ -170,16 +180,25 @@ const Navbar = () => {
     }
   };
 
+  // الحصول على اسم اللغة الحالية للعرض
+  const getCurrentLanguageName = () => {
+    return language === "ar" ? "العربية" : "English";
+  };
+
+  const getCurrentLanguageCode = () => {
+    return language === "ar" ? "AR" : "EN";
+  };
+
   return (
     <>
       <nav
         className={`sticky top-0 w-full z-20 transition-all duration-300 ${
-          scrolled ? "bg-white shadow-lg py-2" : "bg-white py-2"
+          scrolled ? "bg-white shadow-sm shadow-black/10" : "bg-white "
         }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
-            {/* Logo - Right side with spinner */}
+            {/* Logo */}
             <div className="cursor-pointer order-1">
               <div className="relative w-[70px] h-[70px] md:w-[80px] md:h-[80px]">
                 {!imageLoaded && (
@@ -192,12 +211,12 @@ const Navbar = () => {
                   <Image
                     src="/images/logo/logo.png"
                     alt="Tawajood Logo"
-                    width={100}
-                    height={100}
+                    width={200}
+                    height={200}
                     quality={100}
                     loading="eager"
                     priority={true}
-                    className={`w-full h-full object-contain transition-opacity duration-300 ${
+                    className={`w-full h-full transition-opacity duration-300 ${
                       imageLoaded ? "opacity-100" : "opacity-0"
                     }`}
                     onLoad={() => setImageLoaded(true)}
@@ -206,7 +225,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Navigation Links - Center with Active Link Styling */}
+            {/* Navigation Links - Desktop */}
             <div className="hidden lg:flex items-center justify-center flex-1 mx-4 order-2">
               <div className="flex items-center gap-4 xl:gap-8">
                 {navLinks.map((link) => (
@@ -227,10 +246,9 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Start Project Button - Left side with animation */}
+            {/* Desktop Right Section */}
             <div className="order-3 hidden lg:flex items-center gap-4">
-               <LanguageDropdown />
-
+              <LanguageDropdown />
               <motion.button
                 onClick={handleWhatsAppClick}
                 whileHover={{
@@ -247,12 +265,11 @@ const Navbar = () => {
                   damping: 15,
                 }}
                 className="text-white px-4 bg-gradient-to-br from-[#012E29] to-[#00A898] py-2 md:px-5 md:py-3 rounded-2xl text-sm xl:text-base whitespace-nowrap flex items-center gap-2 group cursor-pointer"
-               
               >
                 <span>
                   {language === "ar"
                     ? "ابدأ متجرك الآن"
-                    : "Start Your Project Now"}
+                    : "Start Your Store Now"}
                 </span>
                 <motion.span
                   initial={{ x: 0 }}
@@ -265,7 +282,7 @@ const Navbar = () => {
                     },
                   }}
                 >
-                  
+                  {/* <FaArrowRight /> */}
                 </motion.span>
               </motion.button>
             </div>
@@ -280,12 +297,10 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-          
         </div>
-        
       </nav>
 
-      {/* Mobile Menu - Modern Design with Active Link */}
+      {/* Mobile Menu */}
       {isOpen && (
         <>
           <div
@@ -305,16 +320,16 @@ const Navbar = () => {
                 <Image
                   src="/images/logo/logo.png"
                   alt="Logo"
-                  width={120}
-                  height={80}
+                  width={200}
+                  height={200}
                   quality={100}
                   loading="eager"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full "
                 />
               </div>
             </div>
 
-            <div className="flex flex-col max-h-[60vh] overflow-y-auto">
+            <div className="flex flex-col max-h-[50vh] overflow-y-auto">
               {navLinks.map((link, index) => (
                 <Link
                   aria-label={`go to ${link.key}`}
@@ -335,17 +350,80 @@ const Navbar = () => {
               ))}
             </div>
 
-            <div className="p-4 pt-2 border-t border-gray-100 bg-gray-50">
+            {/* Language Dropdown for Mobile - نفس تصميم الشاشات الكبيرة */}
+            <div className="p-4 border-t border-gray-100 bg-gray-50" ref={langDropdownRef}>
+              {/* Dropdown Trigger */}
+              <div className="relative">
+                <motion.button
+                  onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                  className="w-full flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-[#068377] transition-all duration-300"
+                >
+                  <div className="flex items-center gap-3">
+                    <FaGlobe className="text-[#068377] text-lg" />
+                    <span className="text-gray-700 font-medium">
+                      {getCurrentLanguageName()}
+                    </span>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: isLangDropdownOpen ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <FaChevronDown className="text-gray-400 text-sm" />
+                  </motion.div>
+                </motion.button>
+
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {isLangDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute bottom-full left-0 right-0 mb-2 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden z-50"
+                    >
+                      <button
+                        onClick={() => changeLanguage("ar")}
+                        className={`w-full px-4 py-3 text-right transition-all duration-200 flex items-center justify-between ${
+                          language === "ar"
+                            ? "bg-[#068377]/10 text-[#068377]"
+                            : "hover:bg-gray-50 text-gray-700"
+                        }`}
+                      >
+                        <span>العربية</span>
+                        {language === "ar" && (
+                          <span className="text-[#068377] text-sm">✓</span>
+                        )}
+                      </button>
+                      <button
+                        onClick={() => changeLanguage("en")}
+                        className={`w-full px-4 py-3 text-left transition-all duration-200 flex items-center justify-between ${
+                          language === "en"
+                            ? "bg-[#068377]/10 text-[#068377]"
+                            : "hover:bg-gray-50 text-gray-700"
+                        }`}
+                      >
+                        <span>English</span>
+                        {language === "en" && (
+                          <span className="text-[#068377] text-sm">✓</span>
+                        )}
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* WhatsApp Button */}
               <motion.button
                 onClick={handleWhatsAppClick}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-br from-[#012E29] to-[#00A898] text-white px-4 py-2.5 rounded-xl hover:shadow-lg transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2 group"
+                className="w-full mt-3 bg-gradient-to-br from-[#012E29] to-[#00A898] text-white px-4 py-3 rounded-xl hover:shadow-lg transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2 group"
               >
                 <span>
                   {language === "ar"
                     ? "ابدأ متجرك الآن"
-                    : "Start Your Project Now"}
+                    : "Start Your Store Now"}
                 </span>
                 <motion.span
                   animate={{ x: [0, 5, 0] }}
@@ -355,7 +433,7 @@ const Navbar = () => {
                     ease: "easeInOut",
                   }}
                 >
-                 
+                  {/* <FaArrowRight  /> */}
                 </motion.span>
               </motion.button>
             </div>

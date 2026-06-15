@@ -16,18 +16,18 @@ const Footer = () => {
   const { whatsappNumber } = useCountry();
 
   const services = [
-    t("servicesNames.mobileAppDev"),
-    t("servicesNames.websiteDevSystems"),
-    t("servicesNames.ecommerceHosting"),
-    t("servicesNames.brandIdentity"),
-    t("servicesNames.digitalGrowth"),
+   { translate:t("servicesNames.mobileAppDev") , href:"#about"},
+    { translate:t("servicesNames.websiteDevSystems") , href:"#services"},
+    {translate:t("servicesNames.ecommerceHosting"), href:""},
+    {translate:t("servicesNames.brandIdentity"), href:"#faq"},
+   {translate:t("servicesNames.digitalGrowth"), href:"#contact"},
   ];
 
   // Data for ContactInfo component
   const social = [
     {
       id: 1,
-      imageSrc: "/images/social/in.png",
+      imageSrc: "/images/social/linkedin.png",
       link: "https://www.linkedin.com/company/tawajood/posts/?feedView=all",
       alt: "LinkedIn",
       bgColor: "hover:bg-[#0077B5]",
@@ -54,13 +54,13 @@ const Footer = () => {
       alt: "WhatsApp",
       bgColor: "hover:bg-[#25D366]",
     },
-    {
-      id: 5,
-      imageSrc: "/images/social/tiktok.png",
-      link: "https://www.tiktok.com/@tawajood?_t=8n26pzQEDlV&_r=1",
-      alt: "TikTok",
-      bgColor: "hover:bg-[#000000]",
-    },
+    // {
+    //   id: 5,
+    //   imageSrc: "/images/social/tiktok.png",
+    //   link: "https://www.tiktok.com/@tawajood?_t=8n26pzQEDlV&_r=1",
+    //   alt: "TikTok",
+    //   bgColor: "hover:bg-[#000000]",
+    // },
   ];
 
   const phoneNumbers = ["966549256726+", "201024848723+"];
@@ -97,11 +97,11 @@ const Footer = () => {
               {services.map((service, index) => (
                 <li key={index}>
                   <Link
-                    aria-label={`go to ${service.alt}`}
-                    href="#services"
+                    aria-label={`go to ${service}`}
+                    href={service.href}
                     className="text-white text-sm md:text-[16px] font-medium"
                   >
-                    {service}
+                    {service.translate}
                   </Link>
                 </li>
               ))}
@@ -138,7 +138,7 @@ const Footer = () => {
             </div>
 
             {/* صور السوشيال ميديا */}
-            <div className="mt-8 pt-4">
+            <div className="md:mt-8 pt-4 my-3 md:mb-0">
              
               <div className="flex  gap-4 md:gap-6">
                 {social.map((item) => (
@@ -153,9 +153,10 @@ const Footer = () => {
                       <Image
                         src={item.imageSrc}
                         alt={item.alt}
-                        width={20}
-                        height={20}
-                        className="w-5 h-5 md:w-6 md:h-6 object-contain"
+                        width={100}
+                        height={100}
+                      
+                        className="w-6 h-6 object-contain"
                       />
                     </div>
                   </Link>

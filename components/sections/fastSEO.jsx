@@ -29,7 +29,7 @@ const FastSEO = () => {
         "We develop your goals.. in a language that Saudi digital transformation reality understands",
       description:
         "Turn your idea into a successful digital project with Tawajood. We have designed more than 100 projects in 10 different countries (Restaurant apps, beauty clinics, real estate, meat stores, taxi, car rental, auctions, sports, and various other fields)",
-      cta: "Free Consultation",
+      cta: "Start Your Store Now",
       demo: "View Our Work",
       stats1: "Projects Completed",
       stats2: "Different Countries",
@@ -44,14 +44,14 @@ const FastSEO = () => {
     const message =
       language === "ar"
         ? "السلام عليكم، أود الحصول على ابدأ متجرك الآن لمشروعي الرقمي"
-        : "Hello, I would like to get a free consultation for my digital project";
+        : "Hello, I would like to get a Start Your Store Now for my digital project";
 
     const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
   return (
-    <section className="relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16 bg-white">
+    <section id="services" className="relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16 bg-white">
      
 
       <div className="container mx-auto px-4 relative z-10">
@@ -73,7 +73,7 @@ const FastSEO = () => {
             initial={{ opacity: 0, x: language === "ar" ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 flex items-center order-1 md:order-2"
+            className="w-full lg:w-1/2 flex items-center order-2 md:order-1"
           >
             <motion.div
               className="px-4 md:px-6 lg:px-10 w-full"

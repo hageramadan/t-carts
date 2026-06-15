@@ -64,7 +64,7 @@ const FAQSection = () => {
                 {t("faq.title")}
               </h1>
             </div>
-        <div className="flex flex-col md:flex-row md:items-start items-center gap-8 lg:gap-12 justify-between">
+        <div className="flex flex-col lg:flex-row md:items-start items-center gap-8 lg:gap-12 justify-between">
           {/* المحتوى في اليمين - عرض 760px كحد أقصى */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -190,7 +190,7 @@ const FAQSection = () => {
             viewport={{ once: true }}
             className="flex w-full lg:w-[424px] flex-shrink-0 mx-auto lg:mx-0"
           >
-            <div className="relative lg:w-[424px] mx-auto">
+            <div className="relative w-full lg:w-[424px] mx-auto">
               <ContactForm
                 countries={countries}
                 onSubmit={handleFormSubmit}

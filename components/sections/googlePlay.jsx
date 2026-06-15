@@ -39,15 +39,15 @@ const GooglePlay = () => {
     const message =
       language === "ar"
         ? "السلام عليكم، أود الحصول على ابدأ متجرك الآن لمشروعي الرقمي"
-        : "Hello, I would like to get a free consultation for my digital project";
+        : "Hello, I would like to get a Start Your Store Now for my digital project";
 
     const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
   return (
-    <section className="relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16 ">
-      <div className="container mx-auto px-4 relative z-10 bg-gradient-to-b rounded-3xl from-[#549679] to-[#03504A]">
+    <section className="container mx-auto px-4  md:px-8 relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16 ">
+      <div className=" relative z-10 bg-gradient-to-b rounded-3xl from-[#549679] to-[#03504A]">
         <div className="flex flex-col lg:flex-row items-center justify-between  gap-8 md:gap-12">
           {/* Content Container */}
           <motion.div
@@ -117,7 +117,7 @@ const GooglePlay = () => {
             <div className="relative w-full h-full flex items-center justify-center py-3">
               {/* Main Image */}
               <motion.div
-                className="relative z-10 w-full max-w-[500px]  mx-auto"
+                className="relative z-10 max-w-[300px] md:max-w-[500px]  mx-auto"
                 animate={{
                   y: isHovered ? -15 : 0,
                 }}
@@ -139,7 +139,7 @@ const GooglePlay = () => {
 
               {/* Store Image 1 - Left side */}
               <motion.div
-                className="absolute top-[55%] md:top-[50%] left-0 md:left-24 z-20"
+                className="absolute top-[55%] md:top-[50%] left-1 md:left-24 z-20"
                 animate={{
                   y: isHovered ? -40 : 0,
                 }}
@@ -154,16 +154,16 @@ const GooglePlay = () => {
                   width={72}
                   height={91}
                   quality={100}
-                  className="w-[60px] h-[76px] md:w-[72px] md:h-[91px] object-contain"
+                  className="w-auto h-full"
                 />
               </motion.div>
 
               {/* Store Image 2 - Right side */}
               <motion.div
-                className="absolute top-[10%] md:top-[40%] right-0 md:right-24 z-20"
+                className="absolute top-[10%] md:top-[40%] right-1 md:right-24 z-20"
                 animate={{
                   y: isHovered ? 40 : 0,
-                  x: isHovered ? 20 : 0,
+                  x: isHovered ? 5 : 0,
                 }}
                 transition={{
                   duration: 0.7,
@@ -176,7 +176,7 @@ const GooglePlay = () => {
                   width={72}
                   height={90}
                   quality={100}
-                  className="w-[60px] h-[76px] md:w-[72px] md:h-[91px] object-contain"
+                   className="w-auto h-full"
                 />
               </motion.div>
             </div>

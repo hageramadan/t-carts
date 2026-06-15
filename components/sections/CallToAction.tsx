@@ -10,8 +10,8 @@ export function CallToAction() {
   const { language, t } = useLanguage();
 
   return (
-    <div className="m-6 md:my-14">
-      <section className="container rounded-3xl  px-4 my-5 mx-auto relative py-16 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-[#012E29] to-[#025049]">
+    <div id="contact" className="m-6 md:my-14 container   px-4 md:px-8  mx-auto">
+      <section className="   my-5 rounded-3xl relative py-16 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-[#012E29] to-[#025049]">
         {/* الدائرة اليمنى - حدود فقط */}
         <div className="absolute bottom-1 right-0 md:top-32 md:right-32 w-48 h-48 md:w-[250px] md:h-[250px] lg:w-[448px] lg:h-[392px]  rounded-[9999px] opacity-40 md:opacity-75 border-[4px] border-[#FFFFFF20]" />
 

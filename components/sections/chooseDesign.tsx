@@ -120,7 +120,12 @@ const Card = ({
           </p>
           <div className=" absolute top-[-4rem] left-4 md:left-1/3 group-hover:flex hidden">
           <Link href="/" aria-label="go to website" className="flex items-center gap-3 bg-[#03645B] text-white justify-center w-fit px-4 py-2 rounded-lg">
-           <span className="text-base md:text-lg">معاينة</span>
+         
+          <span className="text-base md:text-lg">
+                  {language === "ar"
+                    ? "معاينة"
+                    : "Preview"}
+                </span> 
            <IoLinkOutline  className="w-5 h-5 md:w-7 md:h-7"/>
 
           </Link>

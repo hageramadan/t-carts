@@ -371,40 +371,30 @@ export const translations = {
     // ============================================
     // FAQ Section Translations
     // ============================================
+    // داخل كائن ar
     faq: {
       title: "هل لديك سؤال؟",
       questions: [
         {
-          question:
-            "هل إدارة محتوى التطبيق تحتاج واجهة تحكم منفصلة عن T CARTS؟",
-          answer:
-            "لا، لوحة التحكم في T CARTS تدير المتجر بالكامل والتطبيق بنفس الكفاءة.",
+          question: "هل أحتاج لخبرة برمجية لإطلاق متجري على T-Carts؟",
+          answer: "أبداً، T-Carts صُممت لتكون سهلة وبسيطة. نحن نتولى عنك كافة الجوانب التقنية المعقدة، ونُسلمك المتجر جاهزاً للبيع دون أن تكتب سطراً برمجياً واحداً."
         },
         {
-          question: "هل أمتلك الصلاحية الكاملة علي الكود بعد الانتهاء؟",
-          answer:
-            "يتم تسليمك الكود بالكامل وكافة حقوق الملكية الفكرية والتقنية فور الانتهاء من التنفيذ.",
+          question: "هل هناك عمولات على الطلبات او اشتراك شهري؟",
+          answer: "لا توجد أي عمولات على مبيعاتك. كل ريال أو جنيه تحققه من متجرك هو ملك خالص لك بدون اشتراكات شهرية. سياستنا تعتمد على الشفافية المطلقة، مما يساعدك على زيادة صافي أرباحك مع كل عملية توسع."
         },
         {
-          question: "ماذا عن الدعم الفني بعد إطلاق التطبيق؟",
-          answer:
-            "نوفر فترة ضمان ودعم فني مجاني لمدة سنة بعد الإطلاق لعلاج أي ثغرات، مع توفر باقات صيانة دورية لضمان استمرار عمل مشروعك بأعلى كفاءة وتحديثه باستمرار.",
+          question: "هل يمكنني ربط متجري بشركات الشحن وبوابات الدفع؟",
+          answer: "طبعاً، توفر T-Carts ربطاً مباشراً وسهلاً مع أشهر مزودي خدمات الشحن وبوابات الدفع المحلية مثل فوري وباي موب، لضمان رحلة شراء سلسة لعملائك من الطلب وحتى الاستلام."
         },
         {
-          question: "هل تساعدون في رفع التطبيقات على المتاجر (Apple & Google)؟",
-          answer:
-            "فريقنا يتولى كافة الإجراءات التقنية لرفع التطبيقات على App Store و Google Play، مع التأكد من مطابقتها لكافة الشروط والسياسات لضمان قبولها من المرة الأولى.",
+          question: "كيف تضمن T-Carts دقة تتبع البيانات الإعلانية؟",
+          answer: "نوفر لك ربطاً تقنياً متكاملاً مع منصات التواصل الاجتماعي (مثل فيسبوك، تيك توك، جوجل، وسناب شات). هذا الربط يضمن رصد كل حركة يقوم بها الزائر بدقة 100%، مما يساعدك على اتخاذ قرارات تسويقية مبنية على بيانات حقيقية."
         },
         {
-          question: "كيف يتم تحديد تكلفة المشروع؟",
-          answer:
-            "تعتمد التكلفة علي المميزات والخصائص المطلوبة، حجم البيانات، التكاملات، واذا كان النظام تطبيق او موقع او الاثنان معا. نوفر لك عرض سعر تفصيلي يوضح تكلفة كل مرحلة، مع خيارات دفع تناسب ميزانيتك، لضمان حصولك علي افضل عائد من الاستثمار.",
-        },
-        {
-          question: "هل يمكنني أضافة مميزات جديدة للتطبيق في المستقبل؟",
-          answer:
-            "تصميمنا للكود يتيح إضافة أي تحديثات او مميزات جديدة بسهولة، لضمان نمو اعمالك وتطور السوق دون الحاجة لأعادة بنائه من الصفر.",
-        },
+          question: "ماذا لو واجهت مشكلة تقنية، هل سأجد من يساعدني؟",
+          answer: "فريق الدعم الفني لدينا هو شريكك في النجاح. نحن متاحون لمساعدتك خطوة بخطوة وحل أي تحديات تقنية قد تواجهك لضمان استمرار عمل متجرك بأفضل كفاءة ممكنة."
+        }
       ],
     },
     addressesList: [
@@ -566,8 +556,8 @@ export const translations = {
       consultation: {
         title: "Get a Free Technical Consultation for Your Project",
         subtitle:
-          "Our experts are ready to provide a free consultation to help you achieve your technical goals",
-        button: "Get Free Consultation Now",
+          "Our experts are ready to provide a Start Your Store Now to help you achieve your technical goals",
+        button: "Get Start Your Store Now Now",
         message:
           "Hello, I would like to get a free technical consultation for my project",
       },
@@ -602,8 +592,8 @@ export const translations = {
       consultation: {
         title: "Get a Free Technical Consultation for Your Project",
         subtitle:
-          "Our experts are ready to provide a free consultation to help you achieve your technical goals",
-        button: "Get Free Consultation Now",
+          "Our experts are ready to provide a Start Your Store Now to help you achieve your technical goals",
+        button: "Get Start Your Store Now Now",
         message:
           "Hello, I would like to get a free technical consultation for my project",
       },
@@ -813,7 +803,7 @@ export const translations = {
           subtitle: "Mobile App Development",
           description:
             "We design and develop smart, user-friendly applications that ensure your customers a unique experience, with robust programming that can handle thousands of concurrent users.",
-          buttonText: "Start Your Free Consultation Now",
+          buttonText: "Start Your Start Your Store Now Now",
           previewText: "Preview",
           hasPreview: false,
         },
@@ -824,7 +814,7 @@ export const translations = {
           subtitle: "Website Development",
           description:
             "We design and develop smart, user-friendly websites that ensure your customers a unique experience, with robust programming that can handle thousands of concurrent users.",
-          buttonText: "Start Your Free Consultation Now",
+          buttonText: "Start Your Start Your Store Now Now",
           previewText: "Preview",
           hasPreview: true,
         },
@@ -902,8 +892,8 @@ export const translations = {
     // ============================================
     contactInfo: {
       title: "Contact Us",
-      subtitle: "Get a free consultation now...",
-      freeConsultation: "Free Consultation",
+      subtitle: "Get a Start Your Store Now now...",
+      freeConsultation: "Start Your Store Now",
     },
 
     // ============================================
@@ -918,45 +908,32 @@ export const translations = {
     // ============================================
     // FAQ Section Translations
     // ============================================
+   // داخل كائن en
     faq: {
       title: "Have a Question?",
       questions: [
         {
-          question:
-            "Does app content management require a separate control panel from T CARTS?",
-          answer:
-            "No, the T CARTS dashboard manages both the store and the app with the same efficiency.",
+          question: "Do I need programming experience to launch my store on T-Carts?",
+          answer: "Not at all, T-Carts is designed to be easy and simple. We handle all the complex technical aspects for you and deliver a store ready for sale without you writing a single line of code."
         },
         {
-          question: "Do I have full ownership of the code after completion?",
-          answer:
-            "You will receive the complete code and all intellectual and technical property rights immediately upon completion of implementation.",
+          question: "Are there any commissions on orders or a monthly subscription?",
+          answer: "There are no commissions on your sales. Every Riyal or Pound you earn from your store is exclusively yours with no monthly subscriptions. Our policy is based on absolute transparency, which helps you increase your net profits with every expansion."
         },
         {
-          question:
-            "What about technical support after launching the application?",
-          answer:
-            "We provide a warranty period and free technical support for one year after launch to address any issues, with available periodic maintenance packages to ensure your project continues to operate at peak efficiency and stays updated.",
+          question: "Can I integrate my store with shipping companies and payment gateways?",
+          answer: "Absolutely, T-Carts provides direct and easy integration with the most famous shipping service providers and local payment gateways like Fawry and Paymob, to ensure a smooth purchase journey for your customers from order to delivery."
         },
         {
-          question:
-            "Do you help with uploading apps to stores (Apple & Google)?",
-          answer:
-            "Our team handles all technical procedures for uploading apps to the App Store and Google Play, ensuring they comply with all terms and policies for first-time approval.",
+          question: "How does T-Carts ensure the accuracy of advertising data tracking?",
+          answer: "We provide you with complete technical integration with social media platforms (like Facebook, TikTok, Google, and Snapchat). This integration ensures tracking every visitor's action with 100% accuracy, helping you make marketing decisions based on real data."
         },
         {
-          question: "How is project cost determined?",
-          answer:
-            "The cost depends on the required features and specifications, data volume, integrations, and whether the system is an app, website, or both. We provide a detailed quote showing the cost of each phase, with payment options that suit your budget to ensure the best return on investment.",
-        },
-        {
-          question: "Can I add new features to the application in the future?",
-          answer:
-            "Our code design allows for easy addition of any updates or new features, ensuring your business grows and adapts to market changes without needing to rebuild from scratch.",
-        },
+          question: "What if I face a technical problem, will I find someone to help me?",
+          answer: "Our technical support team is your partner in success. We are available to help you step by step and solve any technical challenges you may face to ensure your store continues to operate at the best possible efficiency."
+        }
       ],
     },
-
     addressesList: [
       "Dammam - Al Rawdah District, Al Naseem Street, First Building (Volunteer Association Building), First Floor",
       "6/2 Nerco Buildings - Fifth Section - Degla - Maadi",

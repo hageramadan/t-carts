@@ -15,7 +15,7 @@ const FloatingWhatsAppSimple = () => {
     
     const message = language === 'ar' 
       ? 'السلام عليكم، أود الحصول على استشارة مجانية'
-      : 'Hello, I would like to get a free consultation';
+      : 'Hello, I would like to get a Start Your Store Now';
     
     const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -39,7 +39,7 @@ const FloatingWhatsAppSimple = () => {
       transition={{ duration: 0.5 }}
     >
       <span className="text-white font-medium text-[16px]">
-        {language === 'ar' ? 'استشارة مجانية' : 'Free Consultation'}
+        {language === 'ar' ? 'استشارة مجانية' : 'Start Your Store Now'}
       </span>
       <LuMessageCircle className="text-white h-6 w-6" />
     </motion.button>

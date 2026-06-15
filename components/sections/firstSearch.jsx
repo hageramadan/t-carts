@@ -29,7 +29,7 @@ const FirstSearch = () => {
         "We develop your goals.. in a language that Saudi digital transformation reality understands",
       description:
         "Turn your idea into a successful digital project with Tawajood. We have designed more than 100 projects in 10 different countries (Restaurant apps, beauty clinics, real estate, meat stores, taxi, car rental, auctions, sports, and various other fields)",
-      cta: "Free Consultation",
+      cta: "Start Your Store Now",
       demo: "View Our Work",
       stats1: "Projects Completed",
       stats2: "Different Countries",
@@ -44,7 +44,7 @@ const FirstSearch = () => {
     const message =
       language === "ar"
         ? "السلام عليكم، أود الحصول على ابدأ متجرك الآن لمشروعي الرقمي"
-        : "Hello, I would like to get a free consultation for my digital project";
+        : "Hello, I would like to get a Start Your Store Now for my digital project";
 
     const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");

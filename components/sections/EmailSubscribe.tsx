@@ -5,7 +5,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaPaperPlane, FaCheckCircle } from "react-icons/fa";
 import { useLanguage } from "@/contexts/LanguageContext";
-
+import { BiSend } from "react-icons/bi";
 export function EmailSubscribe() {
   const { language, t } = useLanguage();
   const [email, setEmail] = useState("");
@@ -58,6 +58,7 @@ export function EmailSubscribe() {
           {/* زر الإرسال - الأيقونة على اليسار */}
           <motion.button
             type="submit"
+            
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             disabled={isLoading || isSubmitted}
@@ -68,7 +69,7 @@ export function EmailSubscribe() {
             } disabled:opacity-50 disabled:cursor-not-allowed`}
           >
             {isSubmitted ? (
-              <FaCheckCircle className="w-5 h-5" />
+              <BiSend className="w-5 h-5 "/>
             ) : isLoading ? (
               <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
