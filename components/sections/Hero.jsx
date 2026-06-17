@@ -15,7 +15,7 @@ const Hero = () => {
   const translations = {
     ar: {
       badge: "التحول الرقمي في السعودية",
-      title: `أمتلك منظومة بيع متكاملة.. تملكها بالكامل  ...\nبدون اشتراكات أو عمولات`,
+      title: `أمتلك منظومة بيع متكاملة.. تملكها بالكامل  \nبدون اشتراكات أو عمولات`,
       description:
         "أمتلك منظومة بيع متكاملة.. تملكها بالكامل بدون اشتراكات أو عمولات",
       cta: "ابدأ متجرك الآن",
@@ -83,7 +83,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[46px] font-bold mb-4 md:mb-6 text-[#012E29] whitespace-pre-line"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[46px] font-bold mb-4 md:mb-6 text-[#012E29] whitespace-pre-line"
                 style={{ lineHeight: "1.4" }}
               >
                 {t.title}

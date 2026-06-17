@@ -20,7 +20,7 @@ const Footer = () => {
     { translate:t("servicesNames.websiteDevSystems") , href:"#services"},
     {translate:t("servicesNames.ecommerceHosting"), href:""},
     {translate:t("servicesNames.brandIdentity"), href:"#faq"},
-   {translate:t("servicesNames.digitalGrowth"), href:"#contact"},
+   {translate:t("servicesNames.digitalGrowth"), href:`https://wa.me/${whatsappNumber}`},
   ];
 
   // Data for ContactInfo component
@@ -35,7 +35,7 @@ const Footer = () => {
     {
       id: 2,
       imageSrc: "/images/social/insta.png",
-      link: "https://www.instagram.com/tawajoodco?igsh=MWxna2xqazBvZzQyaw%3D%3D",
+      link: "https://www.instagram.com/tcarstofficial?igsh=MWZkZXZwN2hnMjZsbA==",
       alt: "Instagram",
       bgColor:
         "hover:bg-gradient-to-tr hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF]",
@@ -43,7 +43,7 @@ const Footer = () => {
     {
       id: 3,
       imageSrc: "/images/social/face.png",
-      link: "https://www.facebook.com/tawajood?mibextid=LQQJ4d",
+      link: "https://www.facebook.com/share/14eXaTppRh3/",
       alt: "Facebook",
       bgColor: "hover:bg-[#1877F2]",
     },

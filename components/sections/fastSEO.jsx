@@ -68,12 +68,44 @@ const FastSEO = () => {
         </motion.div>
 
         <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 md:gap-12 ">
+
+           {/* Container for images - same height as content */}
+          <div
+            className="w-full lg:w-1/2 relative flex items-center justify-center "
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <div className="relative w-full h-full flex items-center justify-center py-8 md:py-12">
+              {/* Main Image */}
+              <motion.div
+                className="relative z-10 w-full max-w-[500px] md:max-w-[600px]  mx-auto"
+                animate={{
+                  y: isHovered ? -15 : 0,
+                }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeInOut",
+                }}
+              >
+                <Image
+                  src="/images/fastp/pic.png"
+                  alt="Hero Image"
+                  width={628}
+                  height={419}
+                  quality={90}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+              </motion.div>
+
+            </div>
+          </div>
           {/* Content Container */}
           <motion.div
             initial={{ opacity: 0, x: language === "ar" ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 flex items-center order-2 md:order-1"
+            className="w-full lg:w-1/2 flex items-center "
           >
             <motion.div
               className="px-4 md:px-6 lg:px-10 w-full"
@@ -125,37 +157,7 @@ const FastSEO = () => {
             </motion.div>
           </motion.div>
 
-          {/* Container for images - same height as content */}
-          <div
-            className="w-full lg:w-1/2 relative flex items-center justify-center order-2 md:order-1"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <div className="relative w-full h-full flex items-center justify-center py-8 md:py-12">
-              {/* Main Image */}
-              <motion.div
-                className="relative z-10 w-full max-w-[500px] md:max-w-[600px]  mx-auto"
-                animate={{
-                  y: isHovered ? -15 : 0,
-                }}
-                transition={{
-                  duration: 0.7,
-                  ease: "easeInOut",
-                }}
-              >
-                <Image
-                  src="/images/fastp/pic.png"
-                  alt="Hero Image"
-                  width={628}
-                  height={419}
-                  quality={90}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </motion.div>
-
-            </div>
-          </div>
+         
         </div>
       </div>
     </section>

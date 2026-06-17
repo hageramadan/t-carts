@@ -67,7 +67,7 @@ const FirstSearch = () => {
         <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 md:gap-12">
               {/* Container for images - same height as content */}
           <div
-            className="w-full lg:w-1/2 relative flex items-center justify-center order-2 lg:order-1"
+            className="w-full lg:w-1/2 relative flex items-center justify-center "
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -101,7 +101,7 @@ const FirstSearch = () => {
             initial={{ opacity: 0, x: language === "ar" ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 flex items-center order-1 lg:order-2"
+            className="w-full lg:w-1/2 flex items-center "
           >
             <motion.div
               className="px-4 md:px-6 lg:px-10 w-full"

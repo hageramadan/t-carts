@@ -11,6 +11,7 @@ const GooglePlay = () => {
   const { language } = useLanguage();
   const { whatsappNumber } = useCountry();
   const [isHovered, setIsHovered] = useState(false);
+  const [hoveredButton, setHoveredButton] = useState(null);
 
   // Translations
   const translations = {
@@ -56,13 +57,13 @@ const GooglePlay = () => {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2 flex items-center "
           >
-            <motion.div className="px-4 md:px-6 lg:px-10 w-full ">
+            <motion.div className="px-4 md:px-6 lg:px-10 w-full pb-3">
               {/* Main Title */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-lg sm:text-xl text-center pt-2 md:pt-0 md:text-start md:text-4xl lg:text-5xl xl:text-[40px] font-bold mb-4  text-white md:whitespace-pre-line"
+                className="text-lg  text-center pt-2 md:pt-0 md:text-start md:text-2xl lg:text-3xl xl:text-[40px] font-bold mb-4  text-white md:whitespace-pre-line"
                 style={{ lineHeight: "1.7" }}
               >
                 {t.title}
@@ -87,24 +88,57 @@ const GooglePlay = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="flex  gap-4 md:gap-6"
+                className="flex gap-4 md:gap-6"
               >
-                <Link href="/" aria-label="down load app">
-                  <Image
-                    src="/images/download/appstore.png"
-                    alt="appstore"
-                    width={135}
-                    height={40}
-                  />
-                </Link>
-                <Link href="/" aria-label="down load app">
-                  <Image
-                    src="/images/download/playstore.png"
-                    alt="playstore"
-                    width={135}
-                    height={40}
-                  />
-                </Link>
+                {/* App Store Button */}
+                <motion.div
+                  animate={{
+                    y: hoveredButton === 'appstore' ? -10 : 0,
+                    scale: hoveredButton === 'appstore' ? 1.05 : 1,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 17
+                  }}
+                  onMouseEnter={() => setHoveredButton('appstore')}
+                  onMouseLeave={() => setHoveredButton(null)}
+                >
+                  <Link href="/" aria-label="down load app">
+                    <Image
+                      src="/images/download/appstore.png"
+                      alt="appstore"
+                      width={135}
+                      height={40}
+                      className="transition-all duration-300"
+                    />
+                  </Link>
+                </motion.div>
+
+                {/* Play Store Button */}
+                <motion.div
+                  animate={{
+                    y: hoveredButton === 'playstore' ? -10 : 0,
+                    scale: hoveredButton === 'playstore' ? 1.05 : 1,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 17
+                  }}
+                  onMouseEnter={() => setHoveredButton('playstore')}
+                  onMouseLeave={() => setHoveredButton(null)}
+                >
+                  <Link href="/" aria-label="down load app">
+                    <Image
+                      src="/images/download/playstore.png"
+                      alt="playstore"
+                      width={135}
+                      height={40}
+                      className="transition-all duration-300"
+                    />
+                  </Link>
+                </motion.div>
               </motion.div>
             </motion.div>
           </motion.div>

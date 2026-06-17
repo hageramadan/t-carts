@@ -68,7 +68,8 @@ const Card = ({
   buttonText, 
   badgeText, 
   badgeColor,
-  language 
+  language,
+  index
 }: {
   image: string;
   title: string;
@@ -77,7 +78,22 @@ const Card = ({
   badgeText: string | null;
   badgeColor?: string;
   language: string;
+  index: number;
 }) => {
+  const { whatsappNumber } = useCountry();
+
+  // روابط المعاينة لكل مشروع
+  const previewLinks = [
+    "https://clothes-gray-nu.vercel.app/",
+    "https://mobelia.vercel.app/",
+    "https://matjar-beryl.vercel.app/",
+    "https://beauty-eight-dun.vercel.app/",
+    "https://education-nu-gray.vercel.app/",
+    "https://education-nu-gray.vercel.app/"
+  ];
+
+  const projectLink = previewLinks[index] || previewLinks[0];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -119,24 +135,25 @@ const Card = ({
             {description}
           </p>
           <div className=" absolute top-[-4rem] left-4 md:left-1/3 group-hover:flex hidden">
-          <Link href="/" aria-label="go to website" className="flex items-center gap-3 bg-[#03645B] text-white justify-center w-fit px-4 py-2 rounded-lg">
-         
-          <span className="text-base md:text-lg">
-                  {language === "ar"
-                    ? "معاينة"
-                    : "Preview"}
-                </span> 
-           <IoLinkOutline  className="w-5 h-5 md:w-7 md:h-7"/>
-
-          </Link>
+            <Link 
+              href={projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="go to website" 
+              className="flex items-center gap-3 bg-[#03645B] text-white justify-center w-fit px-4 py-2 rounded-lg"
+            >
+              <span className="text-base md:text-lg">
+                {language === "ar" ? "معاينة" : "Preview"}
+              </span> 
+              <IoLinkOutline className="w-5 h-5 md:w-7 md:h-7"/>
+            </Link>
           </div>
         </div>
 
-        {/* الزر */}
+        {/* الزر السفلي - يفتح الواتساب */}
         <button
           onClick={() => {
-            // يمكن إضافة وظيفة الزر هنا
-            console.log("Button clicked:", buttonText);
+            window.open(`https://wa.me/${whatsappNumber}`, '_blank');
           }}
           className="
           w-full
@@ -176,7 +193,6 @@ const Card = ({
 
 export default function ChooseDesign() {
   const { t, language } = useLanguage();
-  const { whatsappNumber } = useCountry();
 
   // جلب البيانات المترجمة للتصاميم (بما في ذلك البادجات)
   const getTranslatedDesigns = () => {
@@ -248,7 +264,7 @@ export default function ChooseDesign() {
             xl:grid-cols-3
           "
         >
-          {translatedDesigns.map((design) => (
+          {translatedDesigns.map((design, index) => (
             <Card
               key={design.id}
               image={design.image}
@@ -258,6 +274,7 @@ export default function ChooseDesign() {
               badgeText={design.badgeText}
               badgeColor={design.badgeColor}
               language={language}
+              index={index}
             />
           ))}
         </motion.div>
