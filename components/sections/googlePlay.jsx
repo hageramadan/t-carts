@@ -48,14 +48,14 @@ const GooglePlay = () => {
 
   return (
     <section className="container mx-auto px-4  md:px-8 relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16 ">
-      <div className=" relative z-10 bg-gradient-to-b rounded-3xl from-[#549679] to-[#03504A]">
+      <div className=" relative z-10 bg-gradient-to-b rounded-3xl from-[#549679] to-[#03504A] p-5">
         <div className="flex flex-col lg:flex-row items-center justify-between  gap-8 md:gap-12">
           {/* Content Container */}
           <motion.div
             initial={{ opacity: 0, x: language === "ar" ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 flex items-center "
+            className="w-full lg:w-1/2 flex items-center order-2 md:order-1"
           >
             <motion.div className="px-4 md:px-6 lg:px-10 w-full pb-3">
               {/* Main Title */}
@@ -144,14 +144,14 @@ const GooglePlay = () => {
           </motion.div>
           {/* Container for images - same height as content */}
           <div
-            className="w-full lg:w-1/2 relative flex items-center justify-center"
+            className="w-full lg:w-1/2 relative flex items-center justify-center order-1 md:order-2"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
             <div className="relative w-full h-full flex items-center justify-center py-3">
               {/* Main Image */}
               <motion.div
-                className="relative z-10 max-w-[300px] md:max-w-[500px]  mx-auto"
+                className="relative z-10 max-w-[300px] md:max-w-[800px]  mx-auto"
                 animate={{
                   y: isHovered ? -15 : 0,
                 }}
@@ -161,18 +161,18 @@ const GooglePlay = () => {
                 }}
               >
                 <Image
-                  src="/images/download/down.png"
+                  src="/images/download/download.png"
                   alt="Hero Image"
-                  width={502}
+                  width={1202}
                   height={428}
                   quality={100}
-                  className="w-full h-auto object-contain"
+                  className="w-full object-contain "
                   priority
                 />
               </motion.div>
 
               {/* Store Image 1 - Left side */}
-              <motion.div
+              {/* <motion.div
                 className="absolute top-[55%] md:top-[50%] left-1 md:left-24 z-20"
                 animate={{
                   y: isHovered ? -40 : 0,
@@ -190,10 +190,10 @@ const GooglePlay = () => {
                   quality={100}
                   className="w-auto h-full"
                 />
-              </motion.div>
+              </motion.div> */}
 
               {/* Store Image 2 - Right side */}
-              <motion.div
+              {/* <motion.div
                 className="absolute top-[10%] md:top-[40%] right-1 md:right-24 z-20"
                 animate={{
                   y: isHovered ? 40 : 0,
@@ -212,7 +212,7 @@ const GooglePlay = () => {
                   quality={100}
                    className="w-auto h-full"
                 />
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-// ContactForm.js
+// ContactForm.js - الكود المعدل بالكامل
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -10,12 +10,17 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
   const { language, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef(null);
+  
+  // State for form submission status
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    serviceType: "",
+    serviceType: "other", // ✅ تعيين قيمة افتراضية
     message: "",
     additionalInfo: "",
   });
@@ -26,19 +31,20 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
   // قائمة البلدان الافتراضية في حالة عدم وجود بيانات
   const defaultCountries = [
     {
-      name: "السعودية",
-      nameEn: "Saudi Arabia",
-      code: "+966",
-      flag: "🇸🇦",
-      placeholder: "512345678",
-    },
-    {
       name: "مصر",
       nameEn: "Egypt",
       code: "+20",
       flag: "🇪🇬",
       placeholder: "1012345678",
     },
+    {
+      name: "السعودية",
+      nameEn: "Saudi Arabia",
+      code: "+966",
+      flag: "🇸🇦",
+      placeholder: "512345678",
+    },
+    
     {
       name: "الإمارات",
       nameEn: "UAE",
@@ -107,19 +113,20 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
     if (countriesList && countriesList.length > 0) {
       const firstCountry = countriesList[0];
       return firstCountry || {
-        name: language === "ar" ? "السعودية" : "Saudi Arabia",
-        code: "+966",
-        flag: "🇸🇦",
-        placeholder: "512345678",
+        name: language === "ar" ? "مصر" : "Egypt",
+        code: "+20",
+      flag: "🇪🇬",
+      placeholder: "1012345678",
       };
     }
     // القيمة الافتراضية النهائية
-    return {
-      name: language === "ar" ? "السعودية" : "Saudi Arabia",
-      code: "+966",
-      flag: "🇸🇦",
-      placeholder: "512345678",
-    };
+    return  {
+      name: "مصر",
+      nameEn: "Egypt",
+      code: "+20",
+      flag: "🇪🇬",
+      placeholder: "1012345678",
+    }
   });
 
   // Update selected country name when language changes
@@ -148,39 +155,90 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Validation function with translations
+  // ✅ Validation function - تم إزالة التحقق من serviceType
   const validateForm = () => {
     const newErrors = {};
+    let hasErrors = false;
 
+    // التحقق من الاسم
     if (!formData.name.trim()) {
-      newErrors.name = t("validation.nameRequired");
+      newErrors.name = t("validation.nameRequired") || "الاسم مطلوب";
+      hasErrors = true;
     } else if (formData.name.trim().length < 3) {
-      newErrors.name = t("validation.nameMinLength");
+      newErrors.name = t("validation.nameMinLength") || "الاسم يجب أن يكون 3 أحرف على الأقل";
+      hasErrors = true;
     }
 
+     if (!formData.email.trim()) {
+      newErrors.email = t("validation.emailRequired") || "البريد الإلكتروني مطلوب";
+      hasErrors = true;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = t("validation.emailInvalid") || "البريد الإلكتروني غير صحيح";
+      hasErrors = true;
+    }
+
+    // التحقق من رقم الهاتف
     const phoneRegex = /^[0-9]{9,15}$/;
     if (!formData.phone) {
-      newErrors.phone = t("validation.phoneRequired");
+      newErrors.phone = t("validation.phoneRequired") || "رقم الهاتف مطلوب";
+      hasErrors = true;
     } else if (!phoneRegex.test(formData.phone)) {
-      newErrors.phone = t("validation.phoneInvalid");
+      newErrors.phone = t("validation.phoneInvalid") || "رقم الهاتف غير صحيح";
+      hasErrors = true;
     }
 
+    // التحقق من البريد الإلكتروني (اختياري)
     if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = t("validation.emailInvalid");
+      newErrors.email = t("validation.emailInvalid") || "البريد الإلكتروني غير صحيح";
+      hasErrors = true;
     }
 
-    if (!formData.serviceType) {
-      newErrors.serviceType = t("validation.serviceRequired");
-    }
+    // ✅ تم إزالة التحقق من serviceType
 
+    // التحقق من الرسالة
     if (!formData.message.trim()) {
-      newErrors.message = t("validation.messageRequired");
+      newErrors.message = t("validation.messageRequired") || "الرسالة مطلوبة";
+      hasErrors = true;
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = t("validation.messageMinLength");
+      newErrors.message = t("validation.messageMinLength") || "الرسالة يجب أن تكون 10 أحرف على الأقل";
+      hasErrors = true;
     }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    
+    // طباعة الأخطاء في الكونسول للمساعدة في التصحيح
+    if (hasErrors) {
+      console.log('❌ Validation errors:', newErrors);
+      console.log('📝 Current form data:', formData);
+    }
+    
+    return !hasErrors;
+  };
+
+  // Function to send data to API
+  const sendToAPI = async (data) => {
+    try {
+      const response = await fetch('https://admin.t-carts.com/api/landing/contact-us', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      // Check if the response is ok
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error('API Error:', error);
+      throw error;
+    }
   };
 
   const handleChange = (e) => {
@@ -188,6 +246,11 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+    // Reset submit status when user starts typing again
+    if (submitStatus) {
+      setSubmitStatus(null);
+      setSubmitMessage('');
     }
   };
 
@@ -203,23 +266,98 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+    // منع السلوك الافتراضي للنموذج
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
 
-    if (!validateForm()) {
+    console.log('✅ Form submitted - Starting validation...');
+    console.log('📝 Form data:', formData);
+
+    // التحقق من صحة البيانات
+    const isValid = validateForm();
+    
+    if (!isValid) {
+      console.log('❌ Validation failed - Please check the errors above');
+      // عرض رسالة للمستخدم
+      setSubmitStatus('error');
+      setSubmitMessage('يرجى تصحيح الأخطاء في النموذج قبل الإرسال');
+      
+      setTimeout(() => {
+        setSubmitStatus(null);
+        setSubmitMessage('');
+      }, 5000);
+      
       return;
     }
 
+    console.log('✅ Validation passed');
+
+    // تجهيز البيانات حسب متطلبات الـ API
     const fullPhoneNumber = `${selectedCountry.code}${formData.phone}`;
-    const submissionData = {
-      ...formData,
-      fullPhoneNumber,
-      country: selectedCountry.name,
-      countryCode: selectedCountry.code,
+    const apiData = {
+      name: formData.name.trim(),
+      email: formData.email.trim() || '',
+      phone: fullPhoneNumber,
+      country_code: selectedCountry.code,
+      message: formData.message.trim(),
     };
 
-    if (onSubmit) {
-      onSubmit(submissionData);
+    console.log('📤 Sending data to API:', apiData);
+
+    // بدء الإرسال
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setSubmitMessage('');
+
+    try {
+      // استدعاء الـ API
+      const result = await sendToAPI(apiData);
+      
+      console.log('📥 API Response:', result);
+      
+      // التحقق من نجاح الإرسال
+      if (result.result === true) {
+        setSubmitStatus('success');
+        setSubmitMessage(result.message || 'تم إرسال رسالتك بنجاح. سنقوم بالرد عليك قريباً.');
+        
+        // إعادة تعيين حقول النموذج
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          serviceType: "other",
+          message: "",
+          additionalInfo: "",
+        });
+        
+        // استدعاء callback الأب إذا وجد
+        if (onSubmit) {
+          onSubmit(result);
+        }
+        
+        // إخفاء رسالة النجاح بعد 5 ثواني
+        setTimeout(() => {
+          setSubmitStatus(null);
+          setSubmitMessage('');
+        }, 5000);
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('❌ Submission Error:', error);
+      setSubmitStatus('error');
+      setSubmitMessage(error.message || 'حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.');
+      
+      // إخفاء رسالة الخطأ بعد 5 ثواني
+      setTimeout(() => {
+        setSubmitStatus(null);
+        setSubmitMessage('');
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -232,13 +370,6 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
         : "border-gray-300"
     }`;
   };
-
-  const serviceOptions = [
-    { value: "digital_marketing", label: t("servicesNames.digitalMarketing") },
-    { value: "website_dev", label: t("servicesNames.websiteDev") },
-    { value: "mobile_apps", label: t("servicesNames.mobileApps") },
-    { value: "other", label: t("servicesNames.other") },
-  ];
 
   return (
     <motion.div
@@ -255,7 +386,20 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
         {t("contactForm.subtitle")}
       </p>
       
-      <form onSubmit={handleSubmit} className="space-y-5">
+      {/* رسائل النجاح/الخطأ */}
+      {submitStatus === 'success' && (
+        <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
+          <p className="text-sm">✅ {submitMessage}</p>
+        </div>
+      )}
+      
+      {submitStatus === 'error' && (
+        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+          <p className="text-sm">❌ {submitMessage}</p>
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-5" noValidate>
         {/* حقل الاسم */}
         <div className="grid grid-cols-1 gap-5">
           <div>
@@ -266,6 +410,7 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
               onChange={handleChange}
               placeholder={t("form.fullNamePlaceholder")}
               className={getInputClassName("name")}
+              disabled={isSubmitting}
             />
             {errors.name && (
               <p className="text-red-500 text-xs mt-1">{errors.name}</p>
@@ -283,6 +428,7 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
               onChange={handleChange}
               placeholder={t("form.emailPlaceholder")}
               className={getInputClassName("email")}
+              disabled={isSubmitting}
             />
             {errors.email && (
               <p className="text-red-500 text-xs mt-1">{errors.email}</p>
@@ -302,6 +448,7 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
                   errors.phone ? "border-red-500" : "border-gray-300"
                 }`}
                 style={{ minWidth: "90px" }}
+                disabled={isSubmitting}
               >
                 <span className="text-base sm:text-xl">
                   {selectedCountry.flag}
@@ -403,6 +550,7 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
               className={`flex-1 min-w-0 px-3 sm:px-4 py-3 border rounded-l-lg rounded-r-none focus:outline-none focus:ring-2 focus:ring-[#38CB89] focus:border-[#38CB89] transition-all text-sm sm:text-base ${
                 errors.phone ? "border-red-500" : "border-gray-300"
               }`}
+              disabled={isSubmitting}
             />
           </div>
 
@@ -420,6 +568,7 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
             rows="4"
             placeholder={t("form.messagePlaceholder")}
             className={getInputClassName("message")}
+            disabled={isSubmitting}
           />
           {errors.message && (
             <p className="text-red-500 text-xs mt-1">{errors.message}</p>
@@ -430,18 +579,34 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
         <div className="flex justify-center md:justify-end">
           <motion.button
             type="submit"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center group bg-[#38CB89] justify-center gap-2 px-8 py-3 rounded-full text-white font-semibold text-base"
+            onClick={handleSubmit}
+            whileHover={!isSubmitting ? { scale: 1.05 } : {}}
+            whileTap={!isSubmitting ? { scale: 0.95 } : {}}
+            className={`flex items-center group justify-center gap-2 px-8 py-3 rounded-full text-white font-semibold text-base ${
+              isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#38CB89] hover:bg-[#2db87a]'
+            }`}
+            disabled={isSubmitting}
           >
-            <span className="text-sm md:text-[16px] whitespace-nowrap">
-              {t("form.submitButton")}
-            </span>
-            <motion.div>
-              <FaArrowRight
-                className={`inline group-hover:-rotate-45 ${language === "ar" ? "rotate-180" : ""} text-sm md:text-base`}
-              />
-            </motion.div>
+            {isSubmitting ? (
+              <span className="flex items-center gap-2">
+                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                {t("form.sending") || "جاري الإرسال..."}
+              </span>
+            ) : (
+              <>
+                <span className="text-sm md:text-[16px] whitespace-nowrap">
+                  {t("form.submitButton")}
+                </span>
+                <motion.div>
+                  <FaArrowRight
+                    className={`inline group-hover:-rotate-45 ${language === "ar" ? "rotate-180" : ""} text-sm md:text-base`}
+                  />
+                </motion.div>
+              </>
+            )}
           </motion.button>
         </div>
       </form>

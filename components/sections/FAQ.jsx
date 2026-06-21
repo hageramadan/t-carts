@@ -6,11 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ContactForm from "./ContactForm";
-import { useCountry } from "@/contexts/CountryContext";
+
 const FAQSection = () => {
   const { language, t } = useLanguage();
   const [openIndex, setOpenIndex] = useState(null);
-  const { whatsappNumber } = useCountry();
   const isRTL = language === "ar";
 
   const faqs = t("faq.questions");
@@ -18,19 +17,21 @@ const FAQSection = () => {
   const toggleQuestion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  
   const countries = [
-    {
-      name: language === "ar" ? "السعودية" : "Saudi Arabia",
-      code: "+966",
-      flag: "🇸🇦",
-      placeholder: "512345678",
-    },
     {
       name: language === "ar" ? "مصر" : "Egypt",
       code: "+20",
       flag: "🇪🇬",
       placeholder: "1012345678",
     },
+    {
+      name: language === "ar" ? "السعودية" : "Saudi Arabia",
+      code: "+966",
+      flag: "🇸🇦",
+      placeholder: "512345678",
+    },
+    
     {
       name: language === "ar" ? "اليمن" : "Yemen",
       code: "+967",
@@ -50,20 +51,21 @@ const FAQSection = () => {
       placeholder: "551234567",
     },
   ];
-  const handleFormSubmit = () => {
-    // console.log("Form submitted from parent:", data);
-    // هنا يمكنك إضافة منطق الإرسال الفعلي (API call)
+  
+  const handleFormSubmit = (data) => {
+    console.log("✅ Form submitted successfully from parent:", data);
+    // يمكنك إضافة أي منطق إضافي هنا
   };
 
   return (
     <section id="faq" className="py-16 overflow-hidden bg-[#E8F4F4]">
       <div className="container mx-auto px-1 md:px-8">
         {/* العنوان العلوي للسكشن */}
-            <div className="mb-8 text-center lg:text-start">
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#025049] mb-2">
-                {t("faq.title")}
-              </h1>
-            </div>
+        <div className="mb-8 text-center lg:text-start">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#025049] mb-2">
+            {t("faq.title")}
+          </h1>
+        </div>
         <div className="flex flex-col lg:flex-row md:items-start items-center gap-8 lg:gap-12 justify-between">
           {/* المحتوى في اليمين - عرض 760px كحد أقصى */}
           <motion.div
@@ -73,8 +75,6 @@ const FAQSection = () => {
             viewport={{ once: true }}
             className="flex-1 w-full lg:max-w-[760px]"
           >
-            
-
             {/* قائمة الأسئلة */}
             <div className="space-y-6 gap-[24px]">
               {faqs.map((faq, index) => (
@@ -175,11 +175,11 @@ const FAQSection = () => {
             </div>
           </motion.div>
 
-          {/* الصورة في الشمال */}
+          {/* الفورم في الشمال */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileHover={{
-              y: [-2, -10], // فقط تطلع لفوق وتنزل مكانها مرة واحدة
+              y: [-2, -10],
               transition: {
                 duration: 0.5,
                 ease: "easeOut",
@@ -194,7 +194,6 @@ const FAQSection = () => {
               <ContactForm
                 countries={countries}
                 onSubmit={handleFormSubmit}
-                whatsappNumber={whatsappNumber}
               />
             </div>
           </motion.div>

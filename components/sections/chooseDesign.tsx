@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useCountry } from "@/contexts/CountryContext";
 import Link from "next/link";
 import { IoLinkOutline } from "react-icons/io5";
+import { useRef } from "react";
 
 // بيانات التصاميم (بدون نصوص ثابتة)
 const designsData = [
@@ -110,8 +111,8 @@ const Card = ({
         <Image
           src={image}
           alt={title}
-          width={384}
-          height={384}
+          width={684}
+          height={684}
           className="object-cover w-full h-full"
           
         />
@@ -134,7 +135,7 @@ const Card = ({
           <p className="text-[12px] md:text-[18px] mb-2 text-[#838383] text-center leading-relaxed">
             {description}
           </p>
-          <div className=" absolute top-[-4rem] left-4 md:left-1/3 group-hover:flex hidden">
+          <div className=" absolute top-[-4rem] left-1/3  group-hover:flex hidden">
             <Link 
               href={projectLink}
               target="_blank"
@@ -193,6 +194,7 @@ const Card = ({
 
 export default function ChooseDesign() {
   const { t, language } = useLanguage();
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   // جلب البيانات المترجمة للتصاميم (بما في ذلك البادجات)
   const getTranslatedDesigns = () => {
@@ -207,6 +209,17 @@ export default function ChooseDesign() {
 
   const translatedDesigns = getTranslatedDesigns();
 
+  // دوال السحب (Drag) للسلايدر
+  const handleScroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = 320; // عرض العنصر + المسافة
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   // متغيرات الحركة
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -219,10 +232,10 @@ export default function ChooseDesign() {
   };
 
   return (
-    <div   id="projects" className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-8 px-4 sm:px-6 lg:px-8" dir={language === "ar" ? "rtl" : "ltr"}>
+    <div id="projects" className="= py-8 px-4 sm:px-6 lg:px-8" dir={language === "ar" ? "rtl" : "ltr"}>
       
       {/* القسم العلوي مع العناوين */}
-      <div className="container mx-auto mb-12 md:mb-16 ">
+      <div className="container mx-auto mb-12 md:mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -247,8 +260,93 @@ export default function ChooseDesign() {
         </motion.div>
       </div>
 
-      {/* حاوية التصاميم */}
-      <div className="container mx-auto px-1 md:px-8">
+      {/* ============================================ */}
+      {/* السلايدر للشاشات الصغيرة (موبايل) */}
+      {/* ============================================ */}
+      <div className="block lg:hidden container mx-auto relative px-1">
+        {/* أزرار السحب */}
+        {/* <button
+          onClick={() => handleScroll("left")}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors border border-gray-200"
+          aria-label="السحب لليسار"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 text-[#025049]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d={language === "ar" ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"}
+            />
+          </svg>
+        </button>
+
+        <button
+          onClick={() => handleScroll("right")}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors border border-gray-200"
+          aria-label="السحب لليمين"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 text-[#025049]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d={language === "ar" ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"}
+            />
+          </svg>
+        </button> */}
+
+        {/* حاوية السلايدر */}
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-scroll snap-x snap-mandatory scroll-smooth gap-4 px-6 pb-4"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+        >
+          {/* إخفاء شريط التمرير */}
+          <style jsx>{`
+            div::-webkit-scrollbar {
+              display: none;
+            }
+          `}</style>
+
+          {translatedDesigns.map((design, index) => (
+            <div
+              key={design.id}
+              className="min-w-[280px] max-w-[280px] snap-start flex-shrink-0"
+            >
+              <Card
+                image={design.image}
+                title={design.title}
+                description={design.description}
+                buttonText={design.buttonText}
+                badgeText={design.badgeText}
+                badgeColor={design.badgeColor}
+                language={language}
+                index={index}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ============================================ */}
+      {/* الشبكة للشاشات الكبيرة (تابلت + ديسكتوب) */}
+      {/* ============================================ */}
+      <div className="hidden lg:block container mx-auto px-1 md:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"

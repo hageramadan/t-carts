@@ -211,8 +211,8 @@ const Navbar = () => {
                   <Image
                     src="/images/logo/logo.png"
                     alt="Tawajood Logo"
-                    width={200}
-                    height={200}
+                    width={300}
+                    height={300}
                     quality={100}
                     loading="eager"
                     priority={true}
@@ -320,8 +320,8 @@ const Navbar = () => {
                 <Image
                   src="/images/logo/logo.png"
                   alt="Logo"
-                  width={200}
-                  height={200}
+                  width={300}
+                  height={300}
                   quality={100}
                   loading="eager"
                   className="w-full h-full "

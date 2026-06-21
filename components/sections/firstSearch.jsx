@@ -86,7 +86,7 @@ const FirstSearch = () => {
                 <Image
                   src="/images/firstsearch/image.png"
                   alt="Hero Image"
-                  width={628}
+                  width={928}
                   height={419}
                   quality={90}
                   className="w-full h-auto object-contain"

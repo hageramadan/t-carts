@@ -64,7 +64,7 @@ const Features = () => {
           whileInView="visible"
           viewport={{ once: true }}
           // تغيير الكلاس هنا: شبكة بعمودين على جميع الشاشات
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-16 mb-3 md:mb-10 mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-16 mb-3 md:mb-10 mx-auto"
         >
           {t("features.items").map((feature, index) => {
             const Icon = icons[index % icons.length];
@@ -72,7 +72,7 @@ const Features = () => {
             return (
               <motion.div key={index} variants={itemVariants}>
                 {/* w-full md:w-[280px] */}
-                <Card className="px-2 py-2 sm:px-5  md:px-[46px] h-[300px] md:h-96  flex  flex-col justify-center">
+                <Card className="px-2 py-2 sm:px-5  md:px-[46px] h-[200px] md:h-96  flex  flex-col justify-center">
                   {/* Icon Container - تصغير الحجم */}
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#ECF6FF] flex items-center justify-center  mb-2 md:mb-4">
                     <Icon className={`text-xl md:text-3xl w-5 h-5 md:w-6 md:h-6 text-[#025049]`} />

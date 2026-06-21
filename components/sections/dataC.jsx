@@ -87,7 +87,7 @@ const DataC = () => {
                 <Image
                   src="/images/datac/data.png"
                   alt="Hero Image"
-                  width={628}
+                  width={928}
                   height={419}
                   quality={90}
                   className="w-full h-auto object-contain "

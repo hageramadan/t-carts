@@ -138,7 +138,7 @@ const Hero = () => {
             <div className="relative w-full h-full flex items-center justify-center py-8 md:py-12">
               {/* Main Image */}
               <motion.div
-                className="relative z-10 w-full max-w-[500px] md:max-w-[600px] lg:max-w-full mx-auto"
+                className="relative z-10 w-full max-w-[500px] md:max-w-[600px] lg:max-w-[900px] mx-auto"
                 animate={{
                   y: isHovered ? -15 : 0,
                 }}
@@ -150,10 +150,10 @@ const Hero = () => {
                 <Image
                   src="/images/hero/hero.png"
                   alt="Hero Image"
-                  width={707}
-                  height={472}
+                  width={1700}
+                  height={672}
                   quality={100}
-                  className="w-full h-auto"
+                  className="object-contain"
                   priority
                 />
               </motion.div>
@@ -172,7 +172,7 @@ const Hero = () => {
                 <Image
                   src="/images/hero/store.png"
                   alt="Store Icon"
-                  width={72}
+                  width={272}
                   height={91}
                   quality={100}
                   className="w-[60px] h-[76px] md:w-[72px] md:h-[91px] object-contain"
@@ -194,7 +194,7 @@ const Hero = () => {
                 <Image
                   src="/images/hero/store.png"
                   alt="Store Icon"
-                  width={72}
+                  width={272}
                   height={90}
                   quality={100}
                   className="w-[60px] h-[76px] md:w-[72px] md:h-[91px] object-contain"

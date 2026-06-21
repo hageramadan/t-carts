@@ -17,7 +17,7 @@ const CountryContext = createContext<CountryContextType>({
 export const useCountry = () => useContext(CountryContext);
 
 export const CountryProvider = ({ children }: { children: ReactNode }) => {
-  const [whatsappNumber, setWhatsappNumber] = useState<string>('966549256726');
+  const [whatsappNumber, setWhatsappNumber] = useState<string>('201055099236');
   const [countryCode, setCountryCode] = useState<string | null>(null);
   const [isDetected, setIsDetected] = useState(false);
   
@@ -43,9 +43,9 @@ export const CountryProvider = ({ children }: { children: ReactNode }) => {
             browserLang?.includes('eg') ||
             browserLang?.includes('EG') ||
             browserLang === 'ar-EG') {
-          setWhatsappNumber('201024848723');
+          setWhatsappNumber('201055099236');
           setCountryCode('EG');
-          // console.log('✅ Egypt detected (TimeZone/Language) - Using number: 201024848723');
+          // console.log('✅ Egypt detected (TimeZone/Language) - Using number: 201055099236');
         } 
         // التحقق من وجود مؤشرات للسعودية
         else if (timezone?.includes('Riyadh') || 

@@ -25,13 +25,13 @@ const Footer = () => {
 
   // Data for ContactInfo component
   const social = [
-    {
-      id: 1,
-      imageSrc: "/images/social/linkedin.png",
-      link: "https://www.linkedin.com/company/tawajood/posts/?feedView=all",
-      alt: "LinkedIn",
-      bgColor: "hover:bg-[#0077B5]",
-    },
+    // {
+    //   id: 1,
+    //   imageSrc: "/images/social/linkedin.png",
+    //   link: "https://www.linkedin.com/company/tawajood/posts/?feedView=all",
+    //   alt: "LinkedIn",
+    //   bgColor: "hover:bg-[#0077B5]",
+    // },
     {
       id: 2,
       imageSrc: "/images/social/insta.png",
@@ -63,7 +63,7 @@ const Footer = () => {
     // },
   ];
 
-  const phoneNumbers = ["966549256726+", "201024848723+"];
+  const phoneNumbers = ["966549256726+", "201055099236+"];
   const emails = ["info@tawajood.com"];
  const addresses = t("addressesList");
 
