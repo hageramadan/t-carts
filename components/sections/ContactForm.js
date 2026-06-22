@@ -547,7 +547,7 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
               value={formData.phone}
               onChange={handleChange}
               placeholder={getPhonePlaceholder()}
-              className={`flex-1 min-w-0 px-3 sm:px-4 py-3 border rounded-l-lg rounded-r-none focus:outline-none focus:ring-1 focus:ring-[#38CB89] focus:border-[#38CB89] transition-all text-sm sm:text-base ${
+              className={`flex-1 min-w-0 px-3 sm:px-4 py-1 md:py-3 border rounded-l-lg rounded-r-none focus:outline-none focus:ring-1 focus:ring-[#38CB89] focus:border-[#38CB89] transition-all text-sm sm:text-base ${
                 errors.phone ? "border-red-500" : "border-gray-300"
               }`}
               disabled={isSubmitting}

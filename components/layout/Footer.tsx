@@ -32,8 +32,15 @@ const Footer = () => {
     //   alt: "LinkedIn",
     //   bgColor: "hover:bg-[#0077B5]",
     // },
-    {
+     {
       id: 2,
+      imageSrc: "/images/social/snap.png",
+      link: "https://www.snapchat.com/add/dukkanah0?share_id=2393hK60rl4&locale=en-EG",
+      alt: "Snap",
+      bgColor: "hover:bg-[#0077B5]",
+    },
+    {
+      id: 3,
       imageSrc: "/images/social/insta.png",
       link: "https://www.instagram.com/tcarstofficial?igsh=MWZkZXZwN2hnMjZsbA==",
       alt: "Instagram",
@@ -41,26 +48,26 @@ const Footer = () => {
         "hover:bg-gradient-to-tr hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF]",
     },
     {
-      id: 3,
+      id: 4,
       imageSrc: "/images/social/face.png",
       link: "https://www.facebook.com/share/14eXaTppRh3/",
       alt: "Facebook",
       bgColor: "hover:bg-[#1877F2]",
     },
     {
-      id: 4,
-      imageSrc: "/images/social/whats.png",
+      id: 5,
+      imageSrc: "/images/social/wats.png",
       link: `https://wa.me/${whatsappNumber}`,
       alt: "WhatsApp",
       bgColor: "hover:bg-[#25D366]",
     },
-    // {
-    //   id: 5,
-    //   imageSrc: "/images/social/tiktok.png",
-    //   link: "https://www.tiktok.com/@tawajood?_t=8n26pzQEDlV&_r=1",
-    //   alt: "TikTok",
-    //   bgColor: "hover:bg-[#000000]",
-    // },
+    {
+      id: 6,
+      imageSrc: "/images/social/tiktok.png",
+      link: "https://www.tiktok.com/@tcartofficial?_r=1&_t=ZS-97II6w5C6aK",
+      alt: "TikTok",
+      bgColor: "hover:bg-[#000000]",
+    },
   ];
 
   const phoneNumbers = ["966549256726+", "201055099236+"];
@@ -78,8 +85,8 @@ const Footer = () => {
                 src="/logof.png"
                 alt="Logo"
                 loading="eager"
-                width={880}
-                height={480}
+                width={2000}
+                height={700}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -153,8 +160,8 @@ const Footer = () => {
                       <Image
                         src={item.imageSrc}
                         alt={item.alt}
-                        width={100}
-                        height={100}
+                        width={1000}
+                        height={1000}
                       
                         className="w-6 h-6 object-contain"
                       />
