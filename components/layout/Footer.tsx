@@ -78,8 +78,8 @@ const Footer = () => {
                 src="/logof.png"
                 alt="Logo"
                 loading="eager"
-                width={280}
-                height={180}
+                width={880}
+                height={480}
                 className="w-full h-full object-cover"
               />
             </div>

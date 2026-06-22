@@ -70,7 +70,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: language === "ar" ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 flex items-center"
+            className="w-full lg:w-1/2 flex items-center order-2 md:order-1"
           >
             <motion.div
               className="px-4 md:px-6 lg:px-10 w-full"
@@ -131,7 +131,7 @@ const Hero = () => {
 
           {/* Container for images - same height as content */}
           <div
-            className="w-full lg:w-1/2 relative flex items-center justify-center"
+            className="w-full lg:w-1/2 relative flex items-center justify-center order-1 md:order-2"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -184,7 +184,7 @@ const Hero = () => {
                 className="absolute top-[15%] md:top-[20%] right-0 md:-right-4 z-20"
                 animate={{
                   y: isHovered ? 40 : 0,
-                  x: isHovered ? 30 : 0,
+                  x: isHovered ? 20 : 0,
                 }}
                 transition={{
                   duration: 0.7,

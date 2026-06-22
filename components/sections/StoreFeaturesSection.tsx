@@ -74,7 +74,7 @@ export function StoreFeaturesSection() {
     },
     {
       id: 2,
-      image: "/images/features/f22.png",
+      image: "/images/features/f222.png",
       title: t("storeFeatures.items.1.title"),
       description: t("storeFeatures.items.1.description"),
     },

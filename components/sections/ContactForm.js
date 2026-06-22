@@ -364,7 +364,7 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
   const getPhonePlaceholder = () => `${t("common.example")}`;
 
   const getInputClassName = (fieldName) => {
-    return `w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#38CB89] focus:border-[#38CB89]  ${
+    return `w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#38CB89] focus:border-[#38CB89]  ${
       errors[fieldName]
         ? "border-red-500 focus:ring-red-500"
         : "border-gray-300"
@@ -444,7 +444,7 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
               <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
-                className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-3 bg-gradient-to-br from-gray-50 to-white border rounded-r-lg rounded-l-none focus:outline-none focus:ring-2 focus:ring-[#38CB89] transition-all duration-200 ${
+                className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-4 md:py-3 py-[10px] bg-gradient-to-br from-gray-50 to-white border rounded-r-lg rounded-l-none focus:outline-none focus:ring-1 focus:ring-[#38CB89] transition-all duration-200 ${
                   errors.phone ? "border-red-500" : "border-gray-300"
                 }`}
                 style={{ minWidth: "90px" }}
@@ -547,7 +547,7 @@ const ContactForm = ({ countries: countriesProp = [], onSubmit }) => {
               value={formData.phone}
               onChange={handleChange}
               placeholder={getPhonePlaceholder()}
-              className={`flex-1 min-w-0 px-3 sm:px-4 py-3 border rounded-l-lg rounded-r-none focus:outline-none focus:ring-2 focus:ring-[#38CB89] focus:border-[#38CB89] transition-all text-sm sm:text-base ${
+              className={`flex-1 min-w-0 px-3 sm:px-4 py-3 border rounded-l-lg rounded-r-none focus:outline-none focus:ring-1 focus:ring-[#38CB89] focus:border-[#38CB89] transition-all text-sm sm:text-base ${
                 errors.phone ? "border-red-500" : "border-gray-300"
               }`}
               disabled={isSubmitting}
