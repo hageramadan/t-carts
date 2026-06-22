@@ -160,8 +160,8 @@ export function StoreFeaturesSection() {
                     src={feature.image}
                     alt={feature.title}
                     // fill
-                    width={1200}
-                    height={900}
+                    width={6200}
+                    height={2900}
                     className="object-cover"  // ← تغيير إلى contain
                     // sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     priority={index < 2}
