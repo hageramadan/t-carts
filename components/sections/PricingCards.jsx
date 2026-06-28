@@ -33,7 +33,7 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
         items-center
         ${
           isHighlighted
-            ? "bg-gradient-to-br from-[#4D9075] to-[#1C6544] shadow-xl hover:shadow-2xl drop-shadow-[0_80px_80px_rgba(5,121,107,0.32)] -mt-8 lg:-mt-10"
+            ? "bg-gradient-to-br from-[#4D9075] to-[#1C6544] shadow-xl hover:shadow-2xl  -mt-8 lg:-mt-10"
             : "bg-white border border-gray-200 hover:border-emerald-300 hover:shadow-lg"
         }
         hover:shadow-2xl
