@@ -60,7 +60,7 @@ export const translations = {
     },
     // Features Section
     needToSuccess: {
-      title: "كل ما تحتاجه للنجاح",
+      title: "جميع أدوات إدارة متجرك في مكان واحد",
       subtitle: "ميزات قوية مدمجة مباشرةً في واجهة متجرك.",
       consultation: {
         title: "احصل على استشارة تقنية لمشروعك مجاناً",
@@ -71,42 +71,38 @@ export const translations = {
       },
       items: [
         {
-          title: " انطلاقة فورية لمتجرك",
-          description:
-            "نستلم عنك الجانب التقني ونُسلمك المتجر جاهزاً بأفضل المعايير المتبعة في التجارة الإلكترونية، لتتمكن من استقبال أولى طلباتك من اليوم الأول",
+          title: " بدون اشتراكات أو عمولات",
+          description: "ادفع مرة واحدة وابدأ البيع مباشرة.",
         },
         {
-          title: " توافق تام مع أجهزة الجوال",
-          description:
-            "بما أن أغلب المتسوقين يستخدمون الجوال، فقد صُممت واجهة المتجر لتكون الأسرع والأسهل في التصفح عبر الموبايل، مما يضمن تحويل الزوار لعملاء دائمين بأعلى كفاءة",
+          title: "بوابات دفع",
+          description: "استقبل المدفوعات بسهولة وأمان.",
         },
         {
-          title: "ربط مباشر مع حلول الدفع والشحن",
-          description:
-            "تدعم المنظمة الربط المتكامل مع أشهر بوابات الدفع وشركات الشحن، لتمنح عملائك خيارات دفع مريحة وتضمن وصول منتجاتك إليهم بأمان وسرعة.",
+          title: "شركات شحن",
+          description: "اربط متجرك بأشهر شركات الشحن",
         },
         {
-          title: " ثبات كامل مهما زاد ضغط الطلبات",
-          description:
-            "هما ارتفع عدد الزيارات أو تضاعفت الطلبات، متجرك لن يتوقف. بنية تحتية قوية مصممة لتحمل فترات ذروة المبيعات بسلاسة تامة تضمن استقرار أرباحك.",
+          title: " تقارير وتحليلات",
+          description: "تابع أداء متجرك واتخذ قرارات أفضل.",
         },
         {
-          title: "دعم فني",
-          description: `إحنا مش مجرد مقدم خدمة، إحنا معاك خطوة بخطوة. فريق دعم متخصص جاهز يحللك أي تحدي تقني يواجهك لضمان تجربة بدون مشاكل`,
+          title: "أمان واستقرار",
+          description: "حماية عالية لضمان استمرارية أعمالك.",
         },
         {
-          title: "دعم فني متخصص ومستمر",
-          description: `لسنا مجرد مزود خدمة، نحن شركاؤك في النجاح. فريقنا التقني متواجد معك خطوة بخطوة لحل أي تحديات قد تواجهك، لضمان استمرار عملك دون أي عوائق`,
+          title: "إدارة من أي مكان",
+          description: "تابع متجرك من الهاتف أو الكمبيوتر",
         },
       ],
     },
     //
 
     chooseDesign: {
-      mainTitle: "اختار التصميم المناسب وابدأ البيع فورًا",
-      description1:
-        "مجموعة من التصاميم الجاهزة المصممة لتناسب أنشطة تجارية مختلفة، لتبدأ متجرك بسرعة وبشكل احترافي.",
-      description2: "جميع التصاميم يمكنك استخدامها لأي نوع من المتاجر بسهولة.",
+      mainTitle: "اختر التصميم المناسب لعلامتك التجارية",
+      description1: "قوالب جاهزة تناسب مختلف الأنشطة",
+      description2:
+        "اختر التصميم المناسب لعلامتك التجارية وابدأ البيع من أول يوم",
       "1": {
         title: "تصميم احترافي للمبيعات",
         description:
@@ -377,24 +373,29 @@ export const translations = {
       questions: [
         {
           question: "هل أحتاج لخبرة برمجية لإطلاق متجري على T-Carts؟",
-          answer: "أبداً، T-Carts صُممت لتكون سهلة وبسيطة. نحن نتولى عنك كافة الجوانب التقنية المعقدة، ونُسلمك المتجر جاهزاً للبيع دون أن تكتب سطراً برمجياً واحداً."
+          answer:
+            "أبداً، T-Carts صُممت لتكون سهلة وبسيطة. نحن نتولى عنك كافة الجوانب التقنية المعقدة، ونُسلمك المتجر جاهزاً للبيع دون أن تكتب سطراً برمجياً واحداً.",
         },
         {
           question: "هل هناك عمولات على الطلبات او اشتراك شهري؟",
-          answer: "لا توجد أي عمولات على مبيعاتك. كل ريال أو جنيه تحققه من متجرك هو ملك خالص لك بدون اشتراكات شهرية. سياستنا تعتمد على الشفافية المطلقة، مما يساعدك على زيادة صافي أرباحك مع كل عملية توسع."
+          answer:
+            "لا توجد أي عمولات على مبيعاتك. كل ريال أو جنيه تحققه من متجرك هو ملك خالص لك بدون اشتراكات شهرية. سياستنا تعتمد على الشفافية المطلقة، مما يساعدك على زيادة صافي أرباحك مع كل عملية توسع.",
         },
         {
           question: "هل يمكنني ربط متجري بشركات الشحن وبوابات الدفع؟",
-          answer: "طبعاً، توفر T-Carts ربطاً مباشراً وسهلاً مع أشهر مزودي خدمات الشحن وبوابات الدفع المحلية مثل فوري وباي موب، لضمان رحلة شراء سلسة لعملائك من الطلب وحتى الاستلام."
+          answer:
+            "طبعاً، توفر T-Carts ربطاً مباشراً وسهلاً مع أشهر مزودي خدمات الشحن وبوابات الدفع المحلية مثل فوري وباي موب، لضمان رحلة شراء سلسة لعملائك من الطلب وحتى الاستلام.",
         },
         {
           question: "كيف تضمن T-Carts دقة تتبع البيانات الإعلانية؟",
-          answer: "نوفر لك ربطاً تقنياً متكاملاً مع منصات التواصل الاجتماعي (مثل فيسبوك، تيك توك، جوجل، وسناب شات). هذا الربط يضمن رصد كل حركة يقوم بها الزائر بدقة 100%، مما يساعدك على اتخاذ قرارات تسويقية مبنية على بيانات حقيقية."
+          answer:
+            "نوفر لك ربطاً تقنياً متكاملاً مع منصات التواصل الاجتماعي (مثل فيسبوك، تيك توك، جوجل، وسناب شات). هذا الربط يضمن رصد كل حركة يقوم بها الزائر بدقة 100%، مما يساعدك على اتخاذ قرارات تسويقية مبنية على بيانات حقيقية.",
         },
         {
           question: "ماذا لو واجهت مشكلة تقنية، هل سأجد من يساعدني؟",
-          answer: "فريق الدعم الفني لدينا هو شريكك في النجاح. نحن متاحون لمساعدتك خطوة بخطوة وحل أي تحديات تقنية قد تواجهك لضمان استمرار عمل متجرك بأفضل كفاءة ممكنة."
-        }
+          answer:
+            "فريق الدعم الفني لدينا هو شريكك في النجاح. نحن متاحون لمساعدتك خطوة بخطوة وحل أي تحديات تقنية قد تواجهك لضمان استمرار عمل متجرك بأفضل كفاءة ممكنة.",
+        },
       ],
     },
     addressesList: [
@@ -462,70 +463,119 @@ export const translations = {
       subtitle: "لم تجد إجابتك؟ تواصل معنا الآن",
     },
     storeFeatures: {
-      mainTitle: "سيطرة كاملة على تجارتك من مكان واحد",
-      mainDescription:
-        "لوحة تحكم ذكية تمنحك رؤية شاملة للمخزون، والطلبات، والمنتجات الأكثر طلباً، لتمكينك من اتخاذ قرارات تضاعف أرباحك.",
+      mainTitle:"تحكم كامل في متجرك من مكان واحد",
+      mainDescription:`لوحة تحكم ذكية تمنحك رؤية شاملة للمخزون، والطلبات، والمنتجات ال تابع الطلبات والعملاء والمبيعات بسهولة من لوحة تحكم مصممة لتوفر عليك الوقت والمجهودأكثر طلباً، لتمكينك من اتخاذ قرارات تضاعف أرباحك.`,
+     
       items: [
         {
-          title: "بيع بدون حدود",
-          description: "أضف عدداً غير محدود من المنتجات والأقسام، دون أي قيود.",
+          title: "تقارير الأداء",
+          description: "تحليلات تدعم نمو أعمالك.",
         },
         {
-          title: "تحليلات ذكية لتوسع أفضل",
-          description:
-            "تابع أداء مبيعاتك بتقارير تفصيلية تكشف لك المنتجات الأكثر ربحية وسلوك عملائك.",
+          title: " إدارة المخزون",
+          description:"متابعة الكميات المتاحة بدقة.",
         },
         {
-          title: "إدارة مخزونك بدقة متناهية",
-          description: "احصل على تنبيهات فورية عند اقتراب نفاذ أي منتج.",
+          title: " إدارة الطلبات",
+          description:"تنظيم ومتابعة جميع الطلبات بسهولة.",
         },
         {
-          title: "منظومة بيع تعمل على مدار الساعة",
-          description:
-            "استقبل طلبات عملائك في كل ثانية، وقم بأدارة دورة الطلب بالكامل بضغطة زر واحدة.",
+          title: "متابعة المبيعات",
+          description:"رصد أداء المبيعات بسهولة."
         },
         {
-          title: "إدارة مخزون بسهولة",
-          description:
-            "راقب مخزونك، استلم تنبيهات فورية، وتجنب نفاد المنتجات أو خسارة المبيعات.",
+          title: " إدارة العملاء",
+          description:"إدارة بيانات العملاء من مكان واحد.",
         },
       ],
     },
+      pricing: {
+      mainTitle: "اختر الباقة المناسبة لعملك",
+      subTitle: "خطط مرنة تبدأ من 7000 جنيه مع مميزات استثنائية",
+      cards: {
+        basic: {
+          name: "الباقة الأساسية",
+          badge: null,
+          subhead: "🔥 خصومات لفترة محدودة",
+          price: "7000",
+          currency: "جنيه",
+          oldPrice: "10,000",
+          feeNote: "بدون رسوم خفيفة",
+          features: [
+            "متجر إلكتروني احترافي",
+            "دومين مجاني لمدة سنة",
+            "دومين مجاني لمدة سنة"
+          ],
+          buttonText: "ابدأ الباقة الأساسية"
+        },
+        growth: {
+          name: "باقة النمو",
+          badge: "الأكثر اختيارًا",
+          subhead: "🔥 خصومات لفترة محدودة",
+          price: "13,000",
+          currency: "جنيه",
+          oldPrice: "16,000",
+          feeNote: "بدون رسوم خفيفة",
+          features: [
+            "جميع مزايا باقة النمو",
+            "تطبيق إدارة متكامل",
+            "ربط بوابة دفع إلكترونية",
+            "أولوية في الدعم الفني",
+            "ربط شركة شحن",
+            "أدوات تسويق متقدمة",
+            "تقارير وتحليلات متقدمة",
+            "استشارات نمو وتطوير"
+          ],
+          buttonText: "اختيار باقة النمو"
+        },
+        professional: {
+          name: "الباقة الاحترافية",
+          badge: null,
+          subhead: "🔥 خصومات لفترة محدودة",
+          price: "10,000",
+          currency: "جنيه",
+          oldPrice: "12,000",
+          feeNote: "بدون رسوم خفيفة",
+          features: [
+            "جميع مزايا الباقة الأساسية",
+            "متجر إلكتروني احترافي",
+            "دومين مجاني لمدة سنة",
+            "دومين مجاني لمدة سنة"
+          ],
+          buttonText: "احجز الباقة الاحترافية"
+        }
+      }
+    }
   },
 
   en: {
     storeFeatures: {
-      mainTitle: "Complete Control Over Your Business from One Place",
-      mainDescription:
-        "A smart dashboard that gives you a comprehensive view of inventory, orders, and best-selling products, enabling you to make decisions that multiply your profits.",
-      items: [
-        {
-          title: "Sell Without Limits",
-          description:
-            "Add an unlimited number of products and categories, without any restrictions.",
-        },
-        {
-          title: "Smart Analytics for Better Growth",
-          description:
-            "Track your sales performance with detailed reports revealing your most profitable products and customer behavior.",
-        },
-        {
-          title: "Manage Your Inventory with Precision",
-          description:
-            "Get instant notifications when any product is about to run out.",
-        },
-        {
-          title: "24/7 Selling System",
-          description:
-            "Receive your customers' orders every second, and manage the entire order cycle with a single click.",
-        },
-        {
-          title: "Easy Inventory Management",
-          description:
-            "Monitor your inventory, receive instant alerts, and avoid product shortages or lost sales.",
-        },
-      ],
+  mainTitle: "Full control over your store from one place",
+  mainDescription: "A smart dashboard that gives you a comprehensive view of inventory, orders, and products. Easily track orders, customers, and sales from a dashboard designed to save you time and effort. Identify your best-sellers to enable you to make decisions that multiply your profits.",
+  
+  items: [
+    {
+      title: "Performance reports",
+      description: "Analytics that support your business growth."
     },
+    {
+      title: "Inventory management",
+      description: "Track available quantities with precision."
+    },
+    {
+      title: "Order management",
+      description: "Organize and track all orders easily."
+    },
+    {
+      title: "Sales monitoring",
+      description: "Monitor sales performance effortlessly."
+    },
+    {
+      title: "Customer management",
+      description: "Manage customer data from one place."
+    }
+  ]
+},
     // Navigation
     nav: {
       home: "Home",
@@ -587,7 +637,7 @@ export const translations = {
 
     // Need To Success Section
     needToSuccess: {
-      title: "Everything You Need for Success",
+      title: "All your store management tools in one place",
       subtitle: "Powerful features built directly into your store's interface.",
       consultation: {
         title: "Get a Free Technical Consultation for Your Project",
@@ -599,44 +649,42 @@ export const translations = {
       },
       items: [
         {
-          title: "Instant Store Launch",
-          description:
-            "We handle the technical side for you and deliver a store ready with the best e-commerce standards, so you can receive your first orders from day one.",
+          title: "No subscriptions or commissions",
+          description: "Pay once and start selling immediately.",
         },
         {
-          title: "Perfect Mobile Compatibility",
-          description:
-            "Since most shoppers use mobile devices, the store interface is designed to be the fastest and easiest to browse on mobile, ensuring you convert visitors into loyal customers with maximum efficiency.",
+          title: "Payment gateways",
+          description: "Receive payments easily and securely.",
         },
         {
-          title: "Direct Integration with Payment & Shipping Solutions",
+          title: "Shipping companies",
           description:
-            "The platform supports full integration with the most popular payment gateways and shipping companies, giving your customers convenient payment options and ensuring your products reach them safely and quickly.",
+            "Connect your store with the most famous shipping companies.",
         },
         {
-          title: "Complete Stability Even Under High Order Pressure",
+          title: "Reports and analytics",
           description:
-            "No matter how many visits increase or orders multiply, your store never stops. A strong infrastructure designed to withstand peak sales periods smoothly, ensuring your profits remain stable.",
+            "Track your store's performance and make better decisions.",
         },
         {
-          title: "Technical Support",
-          description:
-            "We're not just a service provider, we're with you step by step. A specialized support team is ready to solve any technical challenge you face to ensure a problem-free experience.",
+          title: "Security and stability",
+          description: "High protection to ensure your business continuity.",
         },
         {
-          title: "Specialized & Continuous Technical Support",
-          description:
-            "We are not just a service provider, we are your success partners. Our technical team is with you step by step to solve any challenges you may face, ensuring your business continues without any obstacles.",
+          title: "Manage from anywhere",
+          description: "Manage your store from your phone or computer.",
         },
       ],
     },
 
     // Choose Design Section
     chooseDesign: {
-      mainTitle: "Choose the right design and start selling immediately",
-      description1:
-        "A collection of ready-made designs tailored for different business activities, to start your store quickly and professionally.",
-      description2: "All designs can be easily used for any type of store.",
+      mainTitle: "Choose the right design for your brand",
+
+      description1: "Ready-made templates suitable for various activities",
+
+      description2:
+        "Choose the right design for your brand and start selling from day one",
       "1": {
         title: "Professional Sales Design",
         description:
@@ -908,30 +956,40 @@ export const translations = {
     // ============================================
     // FAQ Section Translations
     // ============================================
-   // داخل كائن en
+    // داخل كائن en
     faq: {
       title: "Have a Question?",
       questions: [
         {
-          question: "Do I need programming experience to launch my store on T-Carts?",
-          answer: "Not at all, T-Carts is designed to be easy and simple. We handle all the complex technical aspects for you and deliver a store ready for sale without you writing a single line of code."
+          question:
+            "Do I need programming experience to launch my store on T-Carts?",
+          answer:
+            "Not at all, T-Carts is designed to be easy and simple. We handle all the complex technical aspects for you and deliver a store ready for sale without you writing a single line of code.",
         },
         {
-          question: "Are there any commissions on orders or a monthly subscription?",
-          answer: "There are no commissions on your sales. Every Riyal or Pound you earn from your store is exclusively yours with no monthly subscriptions. Our policy is based on absolute transparency, which helps you increase your net profits with every expansion."
+          question:
+            "Are there any commissions on orders or a monthly subscription?",
+          answer:
+            "There are no commissions on your sales. Every Riyal or Pound you earn from your store is exclusively yours with no monthly subscriptions. Our policy is based on absolute transparency, which helps you increase your net profits with every expansion.",
         },
         {
-          question: "Can I integrate my store with shipping companies and payment gateways?",
-          answer: "Absolutely, T-Carts provides direct and easy integration with the most famous shipping service providers and local payment gateways like Fawry and Paymob, to ensure a smooth purchase journey for your customers from order to delivery."
+          question:
+            "Can I integrate my store with shipping companies and payment gateways?",
+          answer:
+            "Absolutely, T-Carts provides direct and easy integration with the most famous shipping service providers and local payment gateways like Fawry and Paymob, to ensure a smooth purchase journey for your customers from order to delivery.",
         },
         {
-          question: "How does T-Carts ensure the accuracy of advertising data tracking?",
-          answer: "We provide you with complete technical integration with social media platforms (like Facebook, TikTok, Google, and Snapchat). This integration ensures tracking every visitor's action with 100% accuracy, helping you make marketing decisions based on real data."
+          question:
+            "How does T-Carts ensure the accuracy of advertising data tracking?",
+          answer:
+            "We provide you with complete technical integration with social media platforms (like Facebook, TikTok, Google, and Snapchat). This integration ensures tracking every visitor's action with 100% accuracy, helping you make marketing decisions based on real data.",
         },
         {
-          question: "What if I face a technical problem, will I find someone to help me?",
-          answer: "Our technical support team is your partner in success. We are available to help you step by step and solve any technical challenges you may face to ensure your store continues to operate at the best possible efficiency."
-        }
+          question:
+            "What if I face a technical problem, will I find someone to help me?",
+          answer:
+            "Our technical support team is your partner in success. We are available to help you step by step and solve any technical challenges you may face to ensure your store continues to operate at the best possible efficiency.",
+        },
       ],
     },
     addressesList: [
@@ -996,6 +1054,64 @@ export const translations = {
         phone: "+966549256726",
       },
     },
+      pricing: {
+      mainTitle: "Choose the Right Plan for Your Business",
+      subTitle: "Flexible plans starting from 7000 EGP with exclusive features",
+      cards: {
+        basic: {
+          name: "Basic Plan",
+          badge: null,
+          subhead: "🔥 Limited time offers",
+          price: "7000",
+          currency: "EGP",
+          oldPrice: "10,000",
+          feeNote: "No hidden fees",
+          features: [
+            "Professional online store",
+            "Free domain for 1 year",
+            "Free domain for 1 year"
+          ],
+          buttonText: "Start Basic Plan"
+        },
+        growth: {
+          name: "Growth Plan",
+          badge: "Most Popular",
+          subhead: "🔥 Limited time offers",
+          price: "13,000",
+          currency: "EGP",
+          oldPrice: "16,000",
+          feeNote: "No hidden fees",
+          features: [
+            "All Growth plan features",
+            "Integrated management app",
+            "Payment gateway integration",
+            "Priority technical support",
+            "Shipping company integration",
+            "Advanced marketing tools",
+            "Advanced reports & analytics",
+            "Growth & development consulting"
+          ],
+          buttonText: "Select Growth Plan"
+        },
+        professional: {
+          name: "Professional Plan",
+          badge: null,
+          subhead: "🔥 Limited time offers",
+          price: "10,000",
+          currency: "EGP",
+          oldPrice: "12,000",
+          feeNote: "No hidden fees",
+          features: [
+            "All Basic plan features",
+            "Professional online store",
+            "Free domain for 1 year",
+            "Free domain for 1 year"
+          ],
+          buttonText: "Book Professional Plan"
+        }
+      }
+    }
+  
   },
 };
 

@@ -15,9 +15,9 @@ const Hero = () => {
   const translations = {
     ar: {
       badge: "التحول الرقمي في السعودية",
-      title: `أمتلك منظومة بيع متكاملة.. تملكها بالكامل  \nبدون اشتراكات أو عمولات`,
-      description:
-        "أمتلك منظومة بيع متكاملة.. تملكها بالكامل بدون اشتراكات أو عمولات",
+
+      title: `أمتلك منظومة بيع متكاملة.. تيبدأ من 7,000 جنيه فقط.`,
+      description: `ابدأ البيع أونلاين خلال ايام مع دومين واستضافة مجانية لمدة سنة، بدون اشتراكات او عمولات`,
       cta: "ابدأ متجرك الآن",
       demo: "شاهد النماذج",
       stats1: "مشروع منجز",
@@ -26,10 +26,9 @@ const Hero = () => {
     },
     en: {
       badge: "Digital Transformation in Saudi",
-      title:
-        "We develop your goals.. in a language that Saudi digital transformation reality understands",
+      title: "I own a complete sales system.. starting from only 7,000 EGP.",
       description:
-        "Turn your idea into a successful digital project with Tawajood. We have designed more than 100 projects in 10 different countries (Restaurant apps, beauty clinics, real estate, meat stores, taxi, car rental, auctions, sports, and various other fields)",
+        "Start selling online within days with a free domain and hosting for one year, with no subscriptions or commissions.",
       cta: "Start Your Store Now",
       demo: "View Our Work",
       stats1: "Projects Completed",
@@ -52,7 +51,10 @@ const Hero = () => {
   };
 
   return (
-    <section id="about" className="relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16">
+    <section
+      id="about"
+      className="relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16"
+    >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div
@@ -94,7 +96,8 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-base sm:text-lg md:text-xl lg:text-[24px] text-[#4A4A4A] mb-8 md:mb-10 leading-relaxed"
+                className="text-base sm:text-lg md:text-xl lg:text-[24px] text-[#4A4A4A] mb-8 md:mb-10"
+                style={{ lineHeight: 1.7 }}
               >
                 {t.description}
               </motion.p>
