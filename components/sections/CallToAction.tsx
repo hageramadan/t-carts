@@ -40,19 +40,20 @@ export function CallToAction() {
             className="max-w-4xl mx-auto text-center"
           >
             {/* العنوان الرئيسي */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 leading-tight">
-              {language === "ar"
-                ? "توقف عن دفع العمولات والاشتراكات الشهرية. وابدأ بزيادة أرباحك"
-                : "Stop paying commissions and monthly subscriptions. Start increasing your profits"}
-            </h2>
+         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 ">
+  {language === "ar"
+    ? `احصل علي منظومة بيع متكاملة 
+وابدأ البيع باحترافية`
+    : "Get an integrated selling system and start selling professionally"}
+</h2>
 
-            {/* الوصف */}
-            <p className="text-base md:text-lg lg:text-xl text-white/90 mb-10 leading-relaxed max-w-3xl mx-auto">
-              {language === "ar"
-                ? "انضم لمئات التجار الذين وضعوا ثقتهم في T CARTS. ابدأ ببناء متجرك الآن واستمتع بمنظومة بيع متكاملة، بدون عمولات او اشتراك شهري، وبدعم فني يقف معك خطوة بخطوة"
-                : "Join hundreds of merchants who have placed their trust in T CARTS. Start building your store now and enjoy an integrated selling system, no commissions or monthly subscriptions, with technical support that stands with you step by step"}
-            </p>
-
+{/* الوصف */}
+<p className="text-base md:text-lg lg:text-xl text-white/90 mb-10 leading-relaxed max-w-3xl mx-auto">
+  {language === "ar"
+    ? `متجر إلكتروني متكامل مع أدوات الدفع والشحن 
+وإدارة الطلبات لمساعدتك على تنمية أعمالك.`
+    : "A fully integrated online store with payment and shipping tools, and order management to help you grow your business."}
+</p>
             {/* الزر */}
             <motion.div
               whileHover={{ y: -8 }}
