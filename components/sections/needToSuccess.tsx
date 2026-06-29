@@ -67,7 +67,7 @@ const NeedToSuccess = () => {
   const features: FeatureItem[] = t("needToSuccess.items") as FeatureItem[];
 
   return (
-    <section id="about" className="bg-white py-12 md:py-16">
+    <section id="features" className="bg-white py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

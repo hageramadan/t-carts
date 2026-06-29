@@ -81,9 +81,8 @@ const Navbar = () => {
 
       const sections = [
         "about",
-        "services",
+        "features",
         "projects",
-        "partners",
         "faq",
         "contact",
       ];
@@ -127,17 +126,18 @@ const Navbar = () => {
 
   const navLinks = [
     { key: "about", href: "/#about", nameAr: "لماذا T CARTS؟", nameEn: "Why T CARTS?" },
-    {
-      key: "services",
-      href: "/#services",
-      nameAr: "المميزات",
-      nameEn: "Services",
-    },
+   
     {
       key: "projects",
       href: "/#projects",
       nameAr: "النماذج",
       nameEn: "Projects",
+    },
+     {
+      key: "features",
+      href: "/#features",
+      nameAr: "المميزات",
+      nameEn: "features",
     },
     { key: "faq", href: "/#faq", nameAr: "الاسئلة", nameEn: "FAQ" },
     {

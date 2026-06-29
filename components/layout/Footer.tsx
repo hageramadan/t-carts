@@ -17,7 +17,7 @@ const Footer = () => {
 
   const services = [
    { translate:t("servicesNames.mobileAppDev") , href:"#about"},
-    { translate:t("servicesNames.websiteDevSystems") , href:"#services"},
+    { translate:t("servicesNames.websiteDevSystems") , href:"#features"},
     {translate:t("servicesNames.ecommerceHosting"), href:""},
     {translate:t("servicesNames.brandIdentity"), href:"#faq"},
    {translate:t("servicesNames.digitalGrowth"), href:`https://wa.me/${whatsappNumber}`},

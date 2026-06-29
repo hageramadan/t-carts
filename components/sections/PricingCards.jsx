@@ -33,7 +33,7 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
         items-center
         ${
           isHighlighted
-            ? "bg-gradient-to-br from-[#4D9075] to-[#1C6544] shadow-xl hover:shadow-2xl  -mt-8 lg:-mt-10"
+            ? "bg-gradient-to-br from-[#4D9075] to-[#1C6544] shadow-xl hover:shadow-2xl  mt-0 lg:-mt-10"
             : "bg-white border border-gray-200 hover:border-emerald-300 hover:shadow-lg"
         }
         hover:shadow-2xl
@@ -49,7 +49,7 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
           className={`
           absolute -top-3 ${lang === "ar" ? "right-1/4 lg:right-1/3" : "left-4"} 
           bg-[#EF8913] text-white  
-          px-8 py-1.5 rounded-2xl shadow-lg text-base
+          px-8 py-1.5 rounded-2xl shadow-lg text-sm lg:text-base
           flex items-center gap-1.5 
           z-10
         `}
@@ -59,23 +59,23 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
       )}
 
       {/* اسم الباقة */}
-      <h3 className={`text-xl lg:text-2xl font-semibold my-4 ${isHighlighted ? "text-white" : "text-[#05796B]"}`}>
+      <h3 className={`text-xl lg:text-2xl font-semibold my-2 lg:my-4 ${isHighlighted ? "text-white" : "text-[#05796B]"}`}>
         {data.name}
       </h3>
 
       {/* العنوان الفرعي */}
       <div className={`flex items-center gap-1.5 text-white ${isHighlighted ? "bg-white/20" : "bg-[#38CB89]"} p-3 w-fit mb-3 rounded-xl`}>
-        <span className="text-base">{data.subhead}</span>
+        <span className="text-sm lg:text-base">{data.subhead}</span>
       </div>
 
       {/* السعر */}
-      <div className="flex flex-col items-center gap-3 mb-3 lg:mb-4">
+      <div className="flex flex-col items-center gap-1 lg:gap-3 mb-1 lg:mb-4">
         <span className={`text-base lg:text-2xl ${isHighlighted ? "text-white/60" : "text-[#3f494783]"} line-through`}>
           {data.oldPrice}
           {data.currency}
         </span>
-        <span className={`text-3xl md:text-4xl font-bold ${isHighlighted ? "text-white" : "text-[#191C1F]"} flex gap-2`}>
-          <span className="text-3xl md:text-4xl lg:text-[50px]">
+        <span className={`text-xl md:text-4xl font-bold ${isHighlighted ? "text-white" : "text-[#191C1F]"} flex gap-2`}>
+          <span className="text-xl md:text-4xl lg:text-[50px]">
             {data.price}
           </span>
           {data.currency}
@@ -83,7 +83,7 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
       </div>
 
       {/* رسوم - الكارت الثالث خلفية خضراء فاتحة */}
-      <div className={`text-sm font-medium shadow-md px-4 py-2 rounded-2xl w-fit my-4
+      <div className={`text-sm font-medium shadow-md px-4 py-2 rounded-2xl w-fit my-2 lg:my-4
         ${
           isHighlighted 
             ? "bg-white/20 text-white" 
@@ -94,17 +94,17 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
       `}>
         {data.feeNote}
       </div>
-      <hr className={`my-4 ${isHighlighted ? "border-white/20" : "border-[#8593A329]"} h-2 w-full`} />
+      <hr className={`my-2 lg:my-4 ${isHighlighted ? "border-white/20" : "border-[#8593A329]"} h-2 w-full`} />
       
       {/* قائمة المميزات */}
-      <ul className="space-y-4 flex-1 mb-6">
+      <ul className="space-y-2.5 lg:space-y-4 flex-1 mb-3 lg:mb-6">
         {data.features.map((feature, idx) => (
           <li
             key={idx}
             className="flex items-center gap-2.5 text-sm"
           >
             <GoCheckCircleFill className={`${isHighlighted ? "text-white/80" : "text-[#05796B]"} w-5 h-5 flex-shrink-0`} />
-            <span className={`text-base font-medium ${isHighlighted ? "text-white" : "text-[#475156]"}`}>
+            <span className={`lg:text-base font-medium ${isHighlighted ? "text-white" : "text-[#475156]"}`}>
               {feature}
             </span>
           </li>
@@ -117,7 +117,7 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         className={`flex items-center justify-center gap-2
-          w-full py-3.5 px-6 rounded-2xl font-semibold text-base
+          w-full py-3.5 px-6 rounded-2xl font-semibold text-sm lg:text-base
           transition-all duration-300
           ${
             isHighlighted
@@ -167,16 +167,16 @@ export default function PricingCards() {
         features:
           lang === "ar"
             ? [
-                "متجر إلكتروني احترافي",
+                "متجر إلكتروني ",
                 "دومين مجاني لمدة سنة",
-                "دومين مجاني لمدة سنة",
+                "استضافة مجاني لمدة سنة",
               ]
             : [
-                "Professional online store",
+                "online store",
                 "Free domain for 1 year",
-                "Free domain for 1 year",
+                "Free hosting for 1 year",
               ],
-        buttonText: lang === "ar" ? "ابدأ الباقة الأساسية" : "Start Basic Plan",
+        buttonText: lang === "ar" ? " ابدأ الآن  " : "Start Now",
       },
       growth: {
         id: "growth",
@@ -184,17 +184,17 @@ export default function PricingCards() {
         badge: lang === "ar" ? "الأكثر اختيارًا" : "Most Popular",
         subhead:
           lang === "ar" ? "🔥 خصومات لفترة محدودة" : "🔥 Limited time offers",
-        price: "13,000",
+        price: "10,000",
         currency: lang === "ar" ? "جنيه" : "EGP",
-        oldPrice: "16,000",
+        oldPrice: "13,000",
         feeNote: lang === "ar" ? "بدون رسوم خفيفة" : "No hidden fees",
         features:
           lang === "ar"
             ? [
                "جميع مزايا الباقة الأساسية",
-               "ربط بوابة دفع إلكترونية",
+               "ربط بوابة دفع ",
                "ربط شركة شحن",
-               "تقارير وتحليلات متقدمة",
+               "تقارير  متقدمة",
               ]
             : [
   "All Basic plan features",
@@ -202,7 +202,7 @@ export default function PricingCards() {
   "Shipping company integration",
   "Advanced reports & analytics"
 ],
-        buttonText: lang === "ar" ? "اختيار باقة النمو" : "Select Growth Plan",
+         buttonText: lang === "ar" ? " ابدأ الآن  " : "Start Now",
       },
       professional: {
         id: "professional",
@@ -210,18 +210,18 @@ export default function PricingCards() {
         badge: null,
         subhead:
           lang === "ar" ? "🔥 خصومات لفترة محدودة" : "🔥 Limited time offers",
-        price: "10,000",
+        price: "12,000",
         currency: lang === "ar" ? "جنيه" : "EGP",
-        oldPrice: "12,000",
+        oldPrice: "16,000",
         feeNote: lang === "ar" ? "بدون رسوم خفيفة" : "No hidden fees",
         features:
           lang === "ar"
             ? [
                 "جميع مزايا باقة النمو",
                 "تطبيق إدارة متكامل",
-               "أولوية في الدعم الفني",
-                "أدوات تسويق متقدمة",
-                "استشارات نمو وتطوير"
+               `أولوية الدعم`,
+                `إعدادات تسويقية متقدمة`,
+                "استشارات نمو "
               ]
             : [
   "All Growth plan features",
@@ -230,8 +230,7 @@ export default function PricingCards() {
   "Advanced marketing tools",
   "Growth & development consulting"
 ],
-        buttonText:
-          lang === "ar" ? "احجز الباقة الاحترافية" : "Book Professional Plan",
+       buttonText: lang === "ar" ? " ابدأ الآن  " : "Start Now",
       },
     },
   };
@@ -316,7 +315,7 @@ export default function PricingCards() {
         {/* حاوية السلايدر */}
         <div
           ref={scrollRef}
-          className="flex overflow-x-scroll h-auto snap-x snap-mandatory scroll-smooth gap-4 px-6 pb-4 pt-12"
+          className="flex overflow-x-scroll h-auto snap-x snap-mandatory scroll-smooth gap-4 px-6 pb-4 pt-4"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",

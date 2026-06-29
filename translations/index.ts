@@ -1,4 +1,3 @@
-import { title } from "process";
 
 export const translations = {
   ar: {
@@ -140,19 +139,9 @@ export const translations = {
       },
     },
 
-    // Stats Section
-    stats: {
-      clients: "عملاء سعداء",
-      projects: "مشاريع منجزة",
-      awards: "جوائز فازنا بها",
-      team: "أعضاء الفريق",
-    },
+   
 
-    // Testimonials Section
-    testimonials: {
-      title: "ماذا يقول عملاؤنا",
-      subtitle: "موثوق من قبل الشركات حول العالم",
-    },
+   
 
     // CTA Section
     cta: {
@@ -184,65 +173,7 @@ export const translations = {
       message: "السلام عليكم، أريد استشارة تقنية مجانية لمشروعي",
     },
 
-    solutions: {
-      title: "حلول تقنية متكاملة، مصممة لنمو أعمالك",
-      description:
-        "من الفكرة إلى الإطلاق، نقدم لك باقة شاملة من الخدمات البرمجية والتسويقية التي تضمن استقرار مشروعك وانتشارك في السوق الرقمي.",
-      next: "التالي",
-      prev: "السابق",
-      whatsappMessage:
-        "السلام عليكم، أود الحصول على استشارة تقنية مجانية لمشروعي",
-      cards: [
-        {
-          id: 1,
-          image: "/images/Solutions/s1.png",
-          title: "برمجة وتطوير تطبيقات الجوال",
-          description:
-            "نصمم ونطور تطبيقات ذكية وسهلة الاستخدام تضمن لعملائك تجربة فريدة، مع برمجة قوية تتحمل آلاف المستخدمين في وقت واحد.",
-          linkText: "ابدأ برمجة تطبيقك الآن",
-        },
-        {
-          id: 2,
-          image: "/images/Solutions/s2.png",
-          title: "تصميم وتطوير المواقع الإلكترونية والأنظمة",
-          description:
-            "نبني مواقع وأنظمة برمجية متطورة تتناسب مع حجم أعمالك، مع لوحات تحكم احترافية تمكنك من إدارة مشروعك بكل سلاسة.",
-          linkText: "اطلب نظامك الخاص",
-        },
-        {
-          id: 3,
-          image: "/images/Solutions/s3.png",
-          title: "إنشاء المتاجر الإلكترونية وحلول الاستضافة",
-          description:
-            "حلول متكاملة لإطلاق متجرك الإلكتروني، تشمل التصميم والبرمجة مع استضافة سريعة وآمنة تضمن بقاء مشروعك أونلاين.",
-          linkText: "أطلق متجرك الإلكتروني",
-        },
-        {
-          id: 4,
-          image: "/images/Solutions/s4.png",
-          title: "بناء الهوية البصرية وتجربة المستخدم",
-          description:
-            "نبتكر هوية بصرية تعكس احترافية شركتك، مع تصميم واجهات عصرية تركز على سلوك المستخدم وتسهل رحلة الشراء.",
-          linkText: "صمم هوية مشروعك",
-        },
-        {
-          id: 5,
-          image: "/images/Solutions/s5.png",
-          title: "حلول النمو والتسويق الرقمي",
-          description:
-            "لا نكتفي بالبرمجة فقط، بل نساعدك في الوصول لجمهورك المستهدف من خلال حملات إعلانية ذكية (Google & Meta) وخطط نمو تضمن لك أعلى عائد على الاستثمار",
-          linkText: "ابدأ الانتشار الرقمي",
-        },
-        {
-          id: 6,
-          image: "/images/Solutions/s6.png",
-          title: "عام كامل من الدعم الفني",
-          description:
-            "علاقتنا بك لا تنتهي بتسليم التطبيق. نؤمن لك دعمًا فنيًا متكاملاً لمدة سنة كاملة، لضمان استمرارية تميزك في السوق دون أي عوائق تقنية.",
-          linkText: "ابدأ مشروعك برعاية تقنية كاملة",
-        },
-      ],
-    },
+  
 
     industrySolutions: {
       title: "حلول برمجية تناسب مختلف الصناعات",
@@ -287,23 +218,7 @@ export const translations = {
       example: "رقم الجوال",
     },
 
-    partners: {
-      title: "شركاء النجاح حول العالم",
-      description:
-        "نحن شركاء في رحلة التحول الرقمي لنخبة من العلامات التجارية التي اختارت تواجد لتوسيع نطاق أعمالها دولياً.",
-      images: [
-        { id: 1, image: "/images/Partners/partner1.png", name: "شريك 1" },
-        { id: 2, image: "/images/Partners/partner2.png", name: "شريك 2" },
-        { id: 3, image: "/images/Partners/partner3.png", name: "شريك 3" },
-        { id: 4, image: "/images/Partners/partner4.png", name: "شريك 4" },
-        { id: 5, image: "/images/Partners/partner5.png", name: "شريك 5" },
-        { id: 6, image: "/images/Partners/partner6.png", name: "شريك 6" },
-        { id: 7, image: "/images/Partners/partner7.png", name: "شريك 7" },
-        { id: 8, image: "/images/Partners/partner8.png", name: "شريك 8" },
-        { id: 9, image: "/images/Partners/partner9.png", name: "شريك 9" },
-        { id: 10, image: "/images/Partners/partner10.png", name: "شريك 10" },
-      ],
-    },
+   
 
     // ============================================
     // Contact Form Translations
@@ -364,45 +279,35 @@ export const translations = {
         "سجل بياناتك الآن للحصول على استشارة تقنية مجانية وتحليل شامل لفكرتك من قبل خبرائنا.",
     },
 
-    // ============================================
-    // FAQ Section Translations
-    // ============================================
-    // داخل كائن ar
-    faq: {
-      title: "هل لديك سؤال؟",
-      questions: [
-        {
-          question: "هل أحتاج لخبرة برمجية لإطلاق متجري على T-Carts؟",
-          answer:
-            "أبداً، T-Carts صُممت لتكون سهلة وبسيطة. نحن نتولى عنك كافة الجوانب التقنية المعقدة، ونُسلمك المتجر جاهزاً للبيع دون أن تكتب سطراً برمجياً واحداً.",
-        },
-        {
-          question: "هل هناك عمولات على الطلبات او اشتراك شهري؟",
-          answer:
-            "لا توجد أي عمولات على مبيعاتك. كل ريال أو جنيه تحققه من متجرك هو ملك خالص لك بدون اشتراكات شهرية. سياستنا تعتمد على الشفافية المطلقة، مما يساعدك على زيادة صافي أرباحك مع كل عملية توسع.",
-        },
-        {
-          question: "هل يمكنني ربط متجري بشركات الشحن وبوابات الدفع؟",
-          answer:
-            "طبعاً، توفر T-Carts ربطاً مباشراً وسهلاً مع أشهر مزودي خدمات الشحن وبوابات الدفع المحلية مثل فوري وباي موب، لضمان رحلة شراء سلسة لعملائك من الطلب وحتى الاستلام.",
-        },
-        {
-          question: "كيف تضمن T-Carts دقة تتبع البيانات الإعلانية؟",
-          answer:
-            "نوفر لك ربطاً تقنياً متكاملاً مع منصات التواصل الاجتماعي (مثل فيسبوك، تيك توك، جوجل، وسناب شات). هذا الربط يضمن رصد كل حركة يقوم بها الزائر بدقة 100%، مما يساعدك على اتخاذ قرارات تسويقية مبنية على بيانات حقيقية.",
-        },
-        {
-          question: "ماذا لو واجهت مشكلة تقنية، هل سأجد من يساعدني؟",
-          answer:
-            "فريق الدعم الفني لدينا هو شريكك في النجاح. نحن متاحون لمساعدتك خطوة بخطوة وحل أي تحديات تقنية قد تواجهك لضمان استمرار عمل متجرك بأفضل كفاءة ممكنة.",
-        },
-      ],
+   // ============================================
+// FAQ Section Translations
+// ============================================
+faq: {
+  title: "هل لديك سؤال؟",
+  questions: [
+    {
+      question: "هل أحتاج خبرة تقنية؟",
+      answer: "لا، فريقنا يتولى إعداد المتجر بالكامل."
     },
-    addressesList: [
-      "الدمام - حي الروضه شارع النسيم عماره الاولى (مبنى جمعيه التطوع) الدور الاول",
-      "6/2 عمارات نيركو - الشطر الخامس - دجلة - المعادي",
-      "البصرة - مدينة النرجس السكنية",
-    ],
+    {
+      question: "هل الدومين والاستضافة مشمولين؟",
+      answer: "نعم، مجانًا لمدة سنة في الباقة الأساسية وما فوق."
+    },
+    {
+      question: "هل يمكن ربط المتجر ببوابة دفع؟",
+      answer: "نعم، متاح ضمن باقة النمو والاحترافية."
+    },
+    {
+      question: "هل يمكن ربط شركة شحن؟",
+      answer: "نعم، متاح ضمن باقة النمو والاحترافية."
+    },
+    {
+      question: "هل يوجد دعم فني؟",
+      answer: "نعم، جميع الباقات تشمل الدعم الفني."
+    }
+  ]
+},
+   
     countries: {
       saudi: "السعودية",
       egypt: "مصر",
@@ -722,19 +627,9 @@ export const translations = {
       },
     },
 
-    // Stats Section
-    stats: {
-      clients: "Happy Clients",
-      projects: "Projects Done",
-      awards: "Awards Won",
-      team: "Team Members",
-    },
+    
 
-    // Testimonials Section
-    testimonials: {
-      title: "What Our Clients Say",
-      subtitle: "Trusted by businesses worldwide",
-    },
+    
 
     // CTA Section
     cta: {
@@ -773,65 +668,7 @@ export const translations = {
         "Hello, I would like a free technical consultation for my project",
     },
 
-    solutions: {
-      title: "Integrated Technical Solutions Designed for Your Business Growth",
-      description:
-        "From idea to launch, we offer you a comprehensive package of software and marketing services that ensure the stability of your project and your presence in the digital market.",
-      next: "Next",
-      prev: "Previous",
-      whatsappMessage:
-        "Hello, I would like to get a free technical consultation for my project",
-      cards: [
-        {
-          id: 1,
-          image: "/images/Solutions/s1.png",
-          title: "Mobile App Development",
-          description:
-            "We design and develop smart, easy-to-use applications that guarantee your customers a unique experience, with robust programming that can handle thousands of users at once.",
-          linkText: "Start Your App Now",
-        },
-        {
-          id: 2,
-          image: "/images/Solutions/s2.png",
-          title: "Website Development & Systems",
-          description:
-            "We build high-performance websites and software systems that fit your business size, with professional dashboards that allow you to manage your project smoothly.",
-          linkText: "Order Your System Now",
-        },
-        {
-          id: 3,
-          image: "/images/Solutions/s3.png",
-          title: "E-commerce & Hosting Solutions",
-          description:
-            "Integrated solutions to launch your online store, including design and programming with fast and secure hosting that keeps your project online.",
-          linkText: "Launch Your Store",
-        },
-        {
-          id: 4,
-          image: "/images/Solutions/s4.png",
-          title: "Brand Identity & UX Design",
-          description:
-            "We create a visual identity that reflects your company's professionalism, with modern interface design focused on user behavior and facilitating the purchase journey.",
-          linkText: "Design Your Identity",
-        },
-        {
-          id: 5,
-          image: "/images/Solutions/s5.png",
-          title: "Growth & Digital Marketing Solutions",
-          description:
-            "Beyond programming, we help you reach your target audience through smart advertising campaigns (Google & Meta) and growth plans that guarantee the highest ROI.",
-          linkText: "Start Digital Growth",
-        },
-        {
-          id: 6,
-          image: "/images/Solutions/s6.png",
-          title: "Full Year of Technical Support",
-          description:
-            "Our relationship with you doesn't end with app delivery. We provide fully integrated technical support for a full year to ensure your continued success in the market without any technical obstacles.",
-          linkText: "Start With Full Support",
-        },
-      ],
-    },
+   
 
     industrySolutions: {
       title: "Software Solutions for Various Industries",
@@ -876,23 +713,7 @@ export const translations = {
       example: "Phone Number",
     },
 
-    partners: {
-      title: "Success Partners Around the World",
-      description:
-        "We are partners in the digital transformation journey with elite brands that chose to expand their business globally.",
-      images: [
-        { id: 1, image: "/images/Partners/partner1.png", name: "Partner 1" },
-        { id: 2, image: "/images/Partners/partner2.png", name: "Partner 2" },
-        { id: 3, image: "/images/Partners/partner3.png", name: "Partner 3" },
-        { id: 4, image: "/images/Partners/partner4.png", name: "Partner 4" },
-        { id: 5, image: "/images/Partners/partner5.png", name: "Partner 5" },
-        { id: 6, image: "/images/Partners/partner6.png", name: "Partner 6" },
-        { id: 7, image: "/images/Partners/partner7.png", name: "Partner 7" },
-        { id: 8, image: "/images/Partners/partner8.png", name: "Partner 8" },
-        { id: 9, image: "/images/Partners/partner9.png", name: "Partner 9" },
-        { id: 10, image: "/images/Partners/partner10.png", name: "Partner 10" },
-      ],
-    },
+   
 
     // ============================================
     // Contact Form Translations
@@ -958,45 +779,31 @@ export const translations = {
     // ============================================
     // داخل كائن en
     faq: {
-      title: "Have a Question?",
-      questions: [
-        {
-          question:
-            "Do I need programming experience to launch my store on T-Carts?",
-          answer:
-            "Not at all, T-Carts is designed to be easy and simple. We handle all the complex technical aspects for you and deliver a store ready for sale without you writing a single line of code.",
-        },
-        {
-          question:
-            "Are there any commissions on orders or a monthly subscription?",
-          answer:
-            "There are no commissions on your sales. Every Riyal or Pound you earn from your store is exclusively yours with no monthly subscriptions. Our policy is based on absolute transparency, which helps you increase your net profits with every expansion.",
-        },
-        {
-          question:
-            "Can I integrate my store with shipping companies and payment gateways?",
-          answer:
-            "Absolutely, T-Carts provides direct and easy integration with the most famous shipping service providers and local payment gateways like Fawry and Paymob, to ensure a smooth purchase journey for your customers from order to delivery.",
-        },
-        {
-          question:
-            "How does T-Carts ensure the accuracy of advertising data tracking?",
-          answer:
-            "We provide you with complete technical integration with social media platforms (like Facebook, TikTok, Google, and Snapchat). This integration ensures tracking every visitor's action with 100% accuracy, helping you make marketing decisions based on real data.",
-        },
-        {
-          question:
-            "What if I face a technical problem, will I find someone to help me?",
-          answer:
-            "Our technical support team is your partner in success. We are available to help you step by step and solve any technical challenges you may face to ensure your store continues to operate at the best possible efficiency.",
-        },
-      ],
+  title: "Have a Question?",
+  questions: [
+    {
+      question: "Do I need technical experience?",
+      answer: "No, our team handles the complete store setup."
     },
-    addressesList: [
-      "Dammam - Al Rawdah District, Al Naseem Street, First Building (Volunteer Association Building), First Floor",
-      "6/2 Nerco Buildings - Fifth Section - Degla - Maadi",
-      "Basra - Al Narjes Residential City",
-    ],
+    {
+      question: "Are domain and hosting included?",
+      answer: "Yes, free for one year with the Basic plan and above."
+    },
+    {
+      question: "Can I connect the store to a payment gateway?",
+      answer: "Yes, available in the Growth and Professional plans."
+    },
+    {
+      question: "Can I connect a shipping company?",
+      answer: "Yes, available in the Growth and Professional plans."
+    },
+    {
+      question: "Is there technical support?",
+      answer: "Yes, all plans include technical support."
+    }
+  ]
+},
+   
 
     countries: {
       saudi: "Saudi Arabia",
