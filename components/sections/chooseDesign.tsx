@@ -96,7 +96,7 @@ const Card = ({
     "https://matjar-beryl.vercel.app/",
     "https://beauty-eight-dun.vercel.app/",
     "https://education-nu-gray.vercel.app/",
-    "https://education-nu-gray.vercel.app/"
+    "https://fruits-snowy.vercel.app/"
   ];
 
   const projectLink = previewLinks[index] || previewLinks[0];
