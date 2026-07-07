@@ -48,7 +48,7 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
       {data.badge && (
         <div
           className={`
-          absolute -top-3 ${lang === "ar" ? "right-1/3 lg:right-1/3" : "left-4"} 
+          absolute -top-3  ${lang === "ar" ? "right-1/3 lg:right-1/3" : "left-4"} 
           bg-[#EF8913] text-white  
           px-4 lg:px-8 py-0.5 lg:py-1 rounded-2xl shadow-lg text-[10px] lg:text-base
           flex items-center gap-1.5 
@@ -313,7 +313,7 @@ export default function PricingCards() {
 
       {/* Mobile View - 3 cards stacked vertically with reduced height */}
       <div className="lg:hidden container mx-auto px-10">
-        <div className="flex flex-col gap-5 max-w-xs mx-auto">
+        <div className="flex flex-col gap-7 max-w-xs mx-auto">
           {cardEntries.map((entry, index) => (
             <div key={entry.data.id} className="w-full mx-auto">
               <PricingCard
