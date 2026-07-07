@@ -315,7 +315,7 @@ export default function PricingCards() {
       <div className="lg:hidden container mx-auto px-10">
         <div className="flex flex-col gap-5 max-w-xs mx-auto">
           {cardEntries.map((entry, index) => (
-            <div key={entry.data.id} className="w-[280px] mx-auto">
+            <div key={entry.data.id} className="w-full mx-auto">
               <PricingCard
                 data={entry.data}
                 isHighlighted={entry.isHighlighted}
