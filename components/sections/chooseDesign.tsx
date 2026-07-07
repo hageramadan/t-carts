@@ -298,7 +298,7 @@ export default function ChooseDesign() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#025049] mb-4"
+            className="text-2xl md:text-3xl font-extrabold text-[#025049] mb-4"
           >
             {t("chooseDesign.mainTitle")}
           </motion.h1>

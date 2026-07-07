@@ -28,18 +28,19 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
       transition={{ duration: 0.1 }}
       viewport={{ once: true }}
       className={`
-        relative flex flex-col rounded-2xl p-6 md:p-8 
+        relative flex flex-col rounded-2xl p-3 md:p-8 
         transition-all duration-100 
         items-center
         ${
           isHighlighted
-            ? "bg-gradient-to-br from-[#4D9075] to-[#1C6544] shadow-xl hover:shadow-2xl  mt-0 lg:-mt-10"
+            ? "bg-gradient-to-br from-[#4D9075] to-[#1C6544] shadow-xl hover:shadow-2xl mt-0 lg:-mt-10"
             : "bg-white border border-gray-200 hover:border-emerald-300 hover:shadow-lg"
         }
         hover:shadow-2xl
         w-full max-w-sm mx-auto
         group
         h-full
+        min-h-[300px] md:min-h-[400px]
       `}
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
@@ -47,9 +48,9 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
       {data.badge && (
         <div
           className={`
-          absolute -top-3 ${lang === "ar" ? "right-1/4 lg:right-1/3" : "left-4"} 
+          absolute -top-3 ${lang === "ar" ? "right-1/3 lg:right-1/3" : "left-4"} 
           bg-[#EF8913] text-white  
-          px-8 py-1.5 rounded-2xl shadow-lg text-sm lg:text-base
+          px-4 lg:px-8 py-0.5 lg:py-1 rounded-2xl shadow-lg text-[10px] lg:text-base
           flex items-center gap-1.5 
           z-10
         `}
@@ -59,31 +60,31 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
       )}
 
       {/* اسم الباقة */}
-      <h3 className={`text-xl lg:text-2xl font-semibold my-2 lg:my-4 ${isHighlighted ? "text-white" : "text-[#05796B]"}`}>
+      <h3 className={`text-sm lg:text-2xl font-semibold my-0.5 lg:my-4 ${isHighlighted ? "text-white" : "text-[#05796B]"}`}>
         {data.name}
       </h3>
 
       {/* العنوان الفرعي */}
-      <div className={`flex items-center gap-1.5 text-white ${isHighlighted ? "bg-white/20" : "bg-[#38CB89]"} p-3 w-fit mb-3 rounded-xl`}>
-        <span className="text-sm lg:text-base">{data.subhead}</span>
+      <div className={`flex items-center gap-1.5 text-white ${isHighlighted ? "bg-white/20" : "bg-[#38CB89]"} p-1.5 lg:p-3 w-fit mb-1 lg:mb-3 rounded-xl`}>
+        <span className="text-[10px] lg:text-base">{data.subhead}</span>
       </div>
 
       {/* السعر */}
-      <div className="flex flex-col items-center gap-1 lg:gap-3 mb-1 lg:mb-4">
-        <span className={`text-base lg:text-2xl ${isHighlighted ? "text-white/60" : "text-[#3f494783]"} line-through`}>
+      <div className="flex flex-col items-center gap-0 lg:gap-3 mb-0 lg:mb-4">
+        <span className={`text-[10px] lg:text-2xl ${isHighlighted ? "text-white/60" : "text-[#3f494783]"} line-through`}>
           {data.oldPrice}
           {data.currency}
         </span>
-        <span className={`text-xl md:text-4xl font-bold ${isHighlighted ? "text-white" : "text-[#191C1F]"} flex gap-2`}>
+        <span className={`text-xl md:text-4xl font-bold ${isHighlighted ? "text-white" : "text-[#191C1F]"} flex gap-0.5 lg:gap-2`}>
           <span className="text-xl md:text-4xl lg:text-[50px]">
             {data.price}
           </span>
-          {data.currency}
+          <span className="text-xs lg:text-base">{data.currency}</span>
         </span>
       </div>
 
       {/* رسوم - الكارت الثالث خلفية خضراء فاتحة */}
-      <div className={`text-sm font-medium shadow-md px-4 py-2 rounded-2xl w-fit my-2 lg:my-4
+      <div className={`text-[10px] lg:text-sm font-medium shadow-md px-2.5 lg:px-4 py-1 lg:py-2 rounded-2xl w-fit my-2 lg:my-4
         ${
           isHighlighted 
             ? "bg-white/20 text-white" 
@@ -94,16 +95,16 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
       `}>
         {data.feeNote}
       </div>
-      <hr className={`my-2 lg:my-4 ${isHighlighted ? "border-white/20" : "border-[#8593A329]"} h-2 w-full`} />
+      <hr className={`my-0.5 lg:my-4 ${isHighlighted ? "border-white/20" : "border-[#8593A329]"} h-1 lg:h-2 w-full`} />
       
       {/* قائمة المميزات */}
-      <ul className="space-y-2.5 lg:space-y-4 flex-1 mb-3 lg:mb-6">
+      <ul className="space-y-0.5 lg:space-y-4 flex-1 mb-1 lg:mb-6 w-full">
         {data.features.map((feature, idx) => (
           <li
             key={idx}
-            className="flex items-center gap-2.5 text-sm"
+            className="flex items-center gap-1.5 lg:gap-2.5 text-[10px] lg:text-sm"
           >
-            <GoCheckCircleFill className={`${isHighlighted ? "text-white/80" : "text-[#05796B]"} w-5 h-5 flex-shrink-0`} />
+            <GoCheckCircleFill className={`${isHighlighted ? "text-white/80" : "text-[#05796B]"} w-3 h-3 lg:w-5 lg:h-5 flex-shrink-0`} />
             <span className={`lg:text-base font-medium ${isHighlighted ? "text-white" : "text-[#475156]"}`}>
               {feature}
             </span>
@@ -116,8 +117,8 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
         onClick={handleWhatsAppClick}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className={`flex items-center justify-center gap-2
-          w-full py-3.5 px-6 rounded-2xl font-semibold text-sm lg:text-base
+        className={`flex items-center justify-center gap-1.5 lg:gap-2
+          w-full py-1.5 lg:py-3.5 px-3 lg:px-6 rounded-2xl font-semibold text-[10px] lg:text-base
           transition-all duration-300
           ${
             isHighlighted
@@ -127,7 +128,7 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
         `}
       >
         {data.buttonText}
-        <FaArrowLeftLong />
+        <FaArrowLeftLong className="text-[10px] lg:text-base" />
       </motion.button>
     </motion.div>
   );
@@ -285,13 +286,13 @@ export default function PricingCards() {
 
   return (
     <section className="py-16 px-4 md:px-8 lg:py-12" dir={lang === "ar" ? "rtl" : "ltr"}>
-      <div className="text-center mb-12">
+      <div className="text-center mb-8 lg:mb-12">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-extrabold text-[#025049] mb-2"
+          className="text-2xl md:text-4xl font-extrabold text-[#025049] mb-2"
         >
           {renderHighlightedTitle(mainTitle)}
         </motion.h2>
@@ -310,29 +311,11 @@ export default function PricingCards() {
         ))}
       </div>
 
-      {/* Mobile View - Slider (مثل ChooseDesign) */}
-      <div className="lg:hidden container mx-auto relative px-1">
-        {/* حاوية السلايدر */}
-        <div
-          ref={scrollRef}
-          className="flex overflow-x-scroll h-auto snap-x snap-mandatory scroll-smooth gap-4 px-6 pb-4 pt-4"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-        >
-          {/* إخفاء شريط التمرير */}
-          <style jsx>{`
-            div::-webkit-scrollbar {
-              display: none;
-            }
-          `}</style>
-
+      {/* Mobile View - 3 cards stacked vertically with reduced height */}
+      <div className="lg:hidden container mx-auto px-10">
+        <div className="flex flex-col gap-5 max-w-xs mx-auto">
           {cardEntries.map((entry, index) => (
-            <div
-              key={entry.data.id}
-              className="min-w-[280px] max-w-[280px] snap-start flex-shrink-0"
-            >
+            <div key={entry.data.id} className="w-[280px] mx-auto">
               <PricingCard
                 data={entry.data}
                 isHighlighted={entry.isHighlighted}

@@ -127,17 +127,18 @@ const Navbar = () => {
   const navLinks = [
     { key: "about", href: "/#about", nameAr: "لماذا T CARTS؟", nameEn: "Why T CARTS?" },
    
-    {
-      key: "projects",
-      href: "/#projects",
-      nameAr: "النماذج",
-      nameEn: "Projects",
-    },
+   
      {
       key: "features",
       href: "/#features",
       nameAr: "المميزات",
       nameEn: "features",
+    },
+     {
+      key: "projects",
+      href: "/#projects",
+      nameAr: "النماذج",
+      nameEn: "Projects",
     },
     { key: "faq", href: "/#faq", nameAr: "الاسئلة", nameEn: "FAQ" },
     {

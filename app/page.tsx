@@ -15,11 +15,12 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <ChooseDesign />
       <NeedToSuccess />
+      <ChooseDesign />
+
       <StoreFeaturesSection />
       <GooglePlay />
-      <PricingCards />  {/* أصبح يستخدم البيانات من داخله مثل FAQSection و CallToAction */}
+      <PricingCards /> 
       <FAQSection />
       <CallToAction />
     </>
