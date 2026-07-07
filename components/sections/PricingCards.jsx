@@ -95,17 +95,17 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
       `}>
         {data.feeNote}
       </div>
-      <hr className={`my-0.5 lg:my-4 ${isHighlighted ? "border-white/20" : "border-[#8593A329]"} h-1 lg:h-2 w-full`} />
+      <hr className={`my-2 lg:my-4 ${isHighlighted ? "border-white/20" : "border-[#8593A329]"} h-1 lg:h-2 w-full`} />
       
       {/* قائمة المميزات */}
-      <ul className="space-y-0.5 lg:space-y-4 flex-1 mb-1 lg:mb-6 w-full">
+      <ul className="space-y-2 lg:space-y-4 flex-1 mb-3 lg:mb-6 w-full">
         {data.features.map((feature, idx) => (
           <li
             key={idx}
             className="flex items-center gap-1.5 lg:gap-2.5 text-[10px] lg:text-sm"
           >
             <GoCheckCircleFill className={`${isHighlighted ? "text-white/80" : "text-[#05796B]"} w-3 h-3 lg:w-5 lg:h-5 flex-shrink-0`} />
-            <span className={`lg:text-base font-medium ${isHighlighted ? "text-white" : "text-[#475156]"}`}>
+            <span className={`text-xs lg:text-base font-medium ${isHighlighted ? "text-white" : "text-[#475156]"}`}>
               {feature}
             </span>
           </li>
@@ -118,7 +118,7 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         className={`flex items-center justify-center gap-1.5 lg:gap-2
-          w-full py-1.5 lg:py-3.5 px-3 lg:px-6 rounded-2xl font-semibold text-[10px] lg:text-base
+          w-full py-1.5 lg:py-3.5 px-3 lg:px-6 rounded-2xl font-semibold text-[12px] lg:text-base
           transition-all duration-300
           ${
             isHighlighted
@@ -128,7 +128,7 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
         `}
       >
         {data.buttonText}
-        <FaArrowLeftLong className="text-[10px] lg:text-base" />
+        <FaArrowLeftLong className="text-[12px] lg:text-base" />
       </motion.button>
     </motion.div>
   );
