@@ -1,4 +1,3 @@
-
 export const translations = {
   ar: {
     // Navigation
@@ -71,34 +70,37 @@ export const translations = {
       items: [
         {
           title: " بدون اشتراكات أو عمولات",
-          description: "ادفع مرة واحدة وابدأ البيع مباشرة.",
+          description:
+            "ادفع مرة واحدة وابدأ البيع مباشرة واحصل علي صافي ارباحك كامل بدون اي قيود.",
         },
         {
           title: "بوابات دفع",
-          description: "استقبل المدفوعات بسهولة وأمان.",
+          description:
+            "استقبل المدفوعات بسهولة وأمان من خلال الربط مع بوابات الدفع لضمان تحصيل ارباحك بسهولة.",
         },
         {
           title: "شركات شحن",
-          description: "اربط متجرك بأشهر شركات الشحن",
+          description:
+            "اربط متجرك بأشهر شركات الشحن لتهسيل عملية توصيل الطلبات وزيادة نسبة التسليمات.",
         },
         {
           title: " تقارير وتحليلات",
-          description: "تابع أداء متجرك واتخذ قرارات أفضل.",
+          description: `تابع أداء متجرك واتخذ قرارات أفضل، من خلال تقارير تساعد في تحسين مبيعات علامتك التجارية.`,
         },
         {
           title: "أمان واستقرار",
-          description: "حماية عالية لضمان استمرارية أعمالك.",
+          description: `حماية عالية لضمان استمرارية المبيعات بدون اي اعطال.`,
         },
         {
           title: "إدارة من أي مكان",
-          description: "تابع متجرك من الهاتف أو الكمبيوتر",
+          description: `الحصول علي متابعة لحظية للمبيعات، ادارة الطلبات والمخزون، تقارير العملاء والأداء سواء من الهاتف أو الكمبيوتر.`,
         },
       ],
     },
     //
 
     chooseDesign: {
-      mainTitle: "اختر التصميم المناسب لعلامتك التجارية",
+      mainTitle: "اختر التصميم المناسب لنشاطك التجاري",
       description1: "قوالب جاهزة تناسب مختلف الأنشطة",
       description2:
         "اختر التصميم المناسب لعلامتك التجارية وابدأ البيع من أول يوم",
@@ -139,10 +141,6 @@ export const translations = {
       },
     },
 
-   
-
-   
-
     // CTA Section
     cta: {
       title: "هل أنت مستعد للبدء؟",
@@ -172,8 +170,6 @@ export const translations = {
       button: "احصل على استشارة تقنية لمشروعك مجاناً",
       message: "السلام عليكم، أريد استشارة تقنية مجانية لمشروعي",
     },
-
-  
 
     industrySolutions: {
       title: "حلول برمجية تناسب مختلف الصناعات",
@@ -217,8 +213,6 @@ export const translations = {
       optional: "اختياري",
       example: "رقم الجوال",
     },
-
-   
 
     // ============================================
     // Contact Form Translations
@@ -279,35 +273,35 @@ export const translations = {
         "سجل بياناتك الآن للحصول على استشارة تقنية مجانية وتحليل شامل لفكرتك من قبل خبرائنا.",
     },
 
-   // ============================================
-// FAQ Section Translations
-// ============================================
-faq: {
-  title: "هل لديك سؤال؟",
-  questions: [
-    {
-      question: "هل أحتاج خبرة تقنية؟",
-      answer: "لا، فريقنا يتولى إعداد المتجر بالكامل."
+    // ============================================
+    // FAQ Section Translations
+    // ============================================
+    faq: {
+      title: "هل لديك سؤال؟",
+      questions: [
+        {
+          question: "هل أحتاج خبرة تقنية؟",
+          answer: "لا، فريقنا يتولى إعداد المتجر بالكامل.",
+        },
+        {
+          question: "هل الدومين والاستضافة مشمولين؟",
+          answer: "نعم، مجانًا لمدة سنة في الباقة الأساسية وما فوق.",
+        },
+        {
+          question: "هل يمكن ربط المتجر ببوابة دفع؟",
+          answer: "نعم، متاح ضمن باقة النمو والاحترافية.",
+        },
+        {
+          question: "هل يمكن ربط شركة شحن؟",
+          answer: "نعم، متاح ضمن باقة النمو والاحترافية.",
+        },
+        {
+          question: "هل يوجد دعم فني؟",
+          answer: "نعم، جميع الباقات تشمل الدعم الفني.",
+        },
+      ],
     },
-    {
-      question: "هل الدومين والاستضافة مشمولين؟",
-      answer: "نعم، مجانًا لمدة سنة في الباقة الأساسية وما فوق."
-    },
-    {
-      question: "هل يمكن ربط المتجر ببوابة دفع؟",
-      answer: "نعم، متاح ضمن باقة النمو والاحترافية."
-    },
-    {
-      question: "هل يمكن ربط شركة شحن؟",
-      answer: "نعم، متاح ضمن باقة النمو والاحترافية."
-    },
-    {
-      question: "هل يوجد دعم فني؟",
-      answer: "نعم، جميع الباقات تشمل الدعم الفني."
-    }
-  ]
-},
-   
+
     countries: {
       saudi: "السعودية",
       egypt: "مصر",
@@ -368,33 +362,37 @@ faq: {
       subtitle: "لم تجد إجابتك؟ تواصل معنا الآن",
     },
     storeFeatures: {
-      mainTitle:"تحكم كامل في متجرك من مكان واحد",
-      mainDescription:`لوحة تحكم ذكية تمنحك رؤية شاملة للمخزون، والطلبات، والمنتجات ال تابع الطلبات والعملاء والمبيعات بسهولة من لوحة تحكم مصممة لتوفر عليك الوقت والمجهودأكثر طلباً، لتمكينك من اتخاذ قرارات تضاعف أرباحك.`,
-     
+      mainTitle: "تحكم كامل في متجرك من مكان واحد",
+      mainDescription: `تابع الطلبات والعملاء والمبيعات بسهولة من لوحة تحكم مصممة لتوفر عليك الوقت والمجهود`,
+
       items: [
         {
           title: "تقارير الأداء",
-          description: "تحليلات تدعم نمو أعمالك.",
+          description:
+            " احصل على تحليلات تساعدك على فهم أداء متجرك واتخاذ قرارات مبنية على بيانات",
         },
         {
           title: " إدارة المخزون",
-          description:"متابعة الكميات المتاحة بدقة.",
+          description: "احصل على تنبيهات فورية عند اقتراب نفاذ أي منتج",
         },
         {
           title: " إدارة الطلبات",
-          description:"تنظيم ومتابعة جميع الطلبات بسهولة.",
+          description:
+            "نظّم وتابع جميع طلباتك من مكان واحد، ووفّر وقتك في المتابعة اليومية",
         },
         {
           title: "متابعة المبيعات",
-          description:"رصد أداء المبيعات بسهولة."
+          description:
+            " تابع أداء مبيعاتك بتقارير تفصيلية تكشف لك المنتجات الأكثر ربحية",
         },
         {
           title: " إدارة العملاء",
-          description:"إدارة بيانات العملاء من مكان واحد.",
+          description:
+            "احتفظ ببيانات عملائك وسجل طلباتهم في مكان واحد لتقديم تجربة أفضل",
         },
       ],
     },
-      pricing: {
+    pricing: {
       mainTitle: "اختر الباقة المناسبة لعملك",
       subTitle: "خطط مرنة تبدأ من 7000 جنيه مع مميزات استثنائية",
       cards: {
@@ -409,9 +407,9 @@ faq: {
           features: [
             "متجر إلكتروني احترافي",
             "دومين مجاني لمدة سنة",
-            "دومين مجاني لمدة سنة"
+            "دومين مجاني لمدة سنة",
           ],
-          buttonText: "ابدأ الباقة الأساسية"
+          buttonText: "ابدأ الباقة الأساسية",
         },
         growth: {
           name: "باقة النمو",
@@ -429,9 +427,9 @@ faq: {
             "ربط شركة شحن",
             "أدوات تسويق متقدمة",
             "تقارير وتحليلات متقدمة",
-            "استشارات نمو وتطوير"
+            "استشارات نمو وتطوير",
           ],
-          buttonText: "اختيار باقة النمو"
+          buttonText: "اختيار باقة النمو",
         },
         professional: {
           name: "الباقة الاحترافية",
@@ -445,42 +443,48 @@ faq: {
             "جميع مزايا الباقة الأساسية",
             "متجر إلكتروني احترافي",
             "دومين مجاني لمدة سنة",
-            "دومين مجاني لمدة سنة"
+            "دومين مجاني لمدة سنة",
           ],
-          buttonText: "احجز الباقة الاحترافية"
-        }
-      }
-    }
+          buttonText: "احجز الباقة الاحترافية",
+        },
+      },
+    },
   },
 
   en: {
     storeFeatures: {
-  mainTitle: "Full control over your store from one place",
-  mainDescription: "A smart dashboard that gives you a comprehensive view of inventory, orders, and products. Easily track orders, customers, and sales from a dashboard designed to save you time and effort. Identify your best-sellers to enable you to make decisions that multiply your profits.",
-  
-  items: [
-    {
-      title: "Performance reports",
-      description: "Analytics that support your business growth."
+      mainTitle: "Full Control of Your Store from One Place",
+      mainDescription:
+        "Easily track orders, customers, and sales from a dashboard designed to save you time and effort.",
+
+      items: [
+        {
+          title: "Performance Reports",
+          description:
+            "Get analytics that help you understand your store's performance and make data-driven decisions.",
+        },
+        {
+          title: "Inventory Management",
+          description:
+            "Get instant alerts when any product is about to run out of stock.",
+        },
+        {
+          title: "Order Management",
+          description:
+            "Organize and track all your orders from one place, and save time on daily follow-ups.",
+        },
+        {
+          title: "Sales Tracking",
+          description:
+            "Track your sales performance with detailed reports that reveal your most profitable products.",
+        },
+        {
+          title: "Customer Management",
+          description:
+            "Keep your customer data and order history in one place to provide a better experience.",
+        },
+      ],
     },
-    {
-      title: "Inventory management",
-      description: "Track available quantities with precision."
-    },
-    {
-      title: "Order management",
-      description: "Organize and track all orders easily."
-    },
-    {
-      title: "Sales monitoring",
-      description: "Monitor sales performance effortlessly."
-    },
-    {
-      title: "Customer management",
-      description: "Manage customer data from one place."
-    }
-  ]
-},
     // Navigation
     nav: {
       home: "Home",
@@ -554,37 +558,41 @@ faq: {
       },
       items: [
         {
-          title: "No subscriptions or commissions",
-          description: "Pay once and start selling immediately.",
-        },
-        {
-          title: "Payment gateways",
-          description: "Receive payments easily and securely.",
-        },
-        {
-          title: "Shipping companies",
+          title: "No Subscriptions or Commissions",
           description:
-            "Connect your store with the most famous shipping companies.",
+            "Pay once and start selling immediately, and receive your full net profits without any restrictions.",
         },
         {
-          title: "Reports and analytics",
+          title: "Payment Gateways",
           description:
-            "Track your store's performance and make better decisions.",
+            "Receive payments easily and securely by integrating with payment gateways to ensure hassle-free collection of your profits.",
         },
         {
-          title: "Security and stability",
-          description: "High protection to ensure your business continuity.",
+          title: "Shipping Companies",
+          description:
+            "Connect your store with leading shipping companies to streamline order delivery and increase delivery success rates.",
         },
         {
-          title: "Manage from anywhere",
-          description: "Manage your store from your phone or computer.",
+          title: "Reports & Analytics",
+          description:
+            "Track your store's performance and make better decisions through reports that help improve your brand's sales.",
+        },
+        {
+          title: "Security & Stability",
+          description:
+            "High-level protection to ensure continuous sales without any disruptions.",
+        },
+        {
+          title: "Manage from Anywhere",
+          description:
+            "Get real-time sales monitoring, manage orders and inventory, customer and performance reports - whether from your phone or computer.",
         },
       ],
     },
 
     // Choose Design Section
     chooseDesign: {
-      mainTitle: "Choose the right design for your brand",
+     mainTitle: "Choose the Right Design for Your Business",
 
       description1: "Ready-made templates suitable for various activities",
 
@@ -627,10 +635,6 @@ faq: {
       },
     },
 
-    
-
-    
-
     // CTA Section
     cta: {
       title: "Ready to Get Started?",
@@ -667,8 +671,6 @@ faq: {
       message:
         "Hello, I would like a free technical consultation for my project",
     },
-
-   
 
     industrySolutions: {
       title: "Software Solutions for Various Industries",
@@ -712,8 +714,6 @@ faq: {
       optional: "Optional",
       example: "Phone Number",
     },
-
-   
 
     // ============================================
     // Contact Form Translations
@@ -779,31 +779,30 @@ faq: {
     // ============================================
     // داخل كائن en
     faq: {
-  title: "Have a Question?",
-  questions: [
-    {
-      question: "Do I need technical experience?",
-      answer: "No, our team handles the complete store setup."
+      title: "Have a Question?",
+      questions: [
+        {
+          question: "Do I need technical experience?",
+          answer: "No, our team handles the complete store setup.",
+        },
+        {
+          question: "Are domain and hosting included?",
+          answer: "Yes, free for one year with the Basic plan and above.",
+        },
+        {
+          question: "Can I connect the store to a payment gateway?",
+          answer: "Yes, available in the Growth and Professional plans.",
+        },
+        {
+          question: "Can I connect a shipping company?",
+          answer: "Yes, available in the Growth and Professional plans.",
+        },
+        {
+          question: "Is there technical support?",
+          answer: "Yes, all plans include technical support.",
+        },
+      ],
     },
-    {
-      question: "Are domain and hosting included?",
-      answer: "Yes, free for one year with the Basic plan and above."
-    },
-    {
-      question: "Can I connect the store to a payment gateway?",
-      answer: "Yes, available in the Growth and Professional plans."
-    },
-    {
-      question: "Can I connect a shipping company?",
-      answer: "Yes, available in the Growth and Professional plans."
-    },
-    {
-      question: "Is there technical support?",
-      answer: "Yes, all plans include technical support."
-    }
-  ]
-},
-   
 
     countries: {
       saudi: "Saudi Arabia",
@@ -861,7 +860,7 @@ faq: {
         phone: "+966549256726",
       },
     },
-      pricing: {
+    pricing: {
       mainTitle: "Choose the Right Plan for Your Business",
       subTitle: "Flexible plans starting from 7000 EGP with exclusive features",
       cards: {
@@ -876,9 +875,9 @@ faq: {
           features: [
             "Professional online store",
             "Free domain for 1 year",
-            "Free domain for 1 year"
+            "Free domain for 1 year",
           ],
-          buttonText: "Start Basic Plan"
+          buttonText: "Start Basic Plan",
         },
         growth: {
           name: "Growth Plan",
@@ -896,9 +895,9 @@ faq: {
             "Shipping company integration",
             "Advanced marketing tools",
             "Advanced reports & analytics",
-            "Growth & development consulting"
+            "Growth & development consulting",
           ],
-          buttonText: "Select Growth Plan"
+          buttonText: "Select Growth Plan",
         },
         professional: {
           name: "Professional Plan",
@@ -912,13 +911,12 @@ faq: {
             "All Basic plan features",
             "Professional online store",
             "Free domain for 1 year",
-            "Free domain for 1 year"
+            "Free domain for 1 year",
           ],
-          buttonText: "Book Professional Plan"
-        }
-      }
-    }
-  
+          buttonText: "Book Professional Plan",
+        },
+      },
+    },
   },
 };
 

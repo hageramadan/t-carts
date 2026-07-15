@@ -281,7 +281,7 @@ export default function ChooseDesign() {
   const translatedDesigns = getTranslatedDesigns();
 
   return (
-    <div id="projects" className="py-8 px-4 sm:px-6 lg:px-8" dir={language === "ar" ? "rtl" : "ltr"}>
+    <div id="projects" className="py-8 md:py-16 px-4 sm:px-6 lg:px-8" dir={language === "ar" ? "rtl" : "ltr"}>
       
       {/* القسم العلوي مع العناوين */}
       <div className="container mx-auto mb-12 md:mb-16">
@@ -332,7 +332,7 @@ export default function ChooseDesign() {
       {/* السلايدر للشاشات الصغيرة (موبايل) */}
       {/* ============================================ */}
       {isMobile && (
-        <div className="block lg:hidden container mx-auto relative px-1">
+        <div className="block lg:hidden container mx-auto relative px-1 ">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

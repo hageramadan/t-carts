@@ -102,6 +102,7 @@ export function StoreFeaturesSection() {
 
   return (
     <section
+      id="dashboard"
       className="py-8 md:py-16 container mx-auto px-4 md:px-8"
       dir={language === "ar" ? "rtl" : "ltr"}
     >

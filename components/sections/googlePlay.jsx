@@ -47,7 +47,7 @@ const GooglePlay = () => {
   };
 
   return (
-    <section className="container mx-auto px-4 md:px-8 relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16">
+    <section id="application" className="container mx-auto px-4 md:px-8 relative flex items-center overflow-hidden py-8 md:py-12 lg:py-16">
       <div className="relative z-10 bg-gradient-to-b rounded-3xl from-[#549679] to-[#03504A] p-5 w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
           {/* Content Container */}

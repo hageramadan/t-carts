@@ -140,6 +140,24 @@ const Navbar = () => {
       nameAr: "النماذج",
       nameEn: "Projects",
     },
+     {
+      key: "dashboard",
+      href: "/#dashboard",
+      nameAr: "وحدة التحكم",
+      nameEn: "Dashboard",
+    },
+     {
+      key: "application",
+      href: "/#application",
+      nameAr: "التطبيق",
+      nameEn: "Application",
+    },
+     {
+      key: "subscriptions ",
+      href: "/#subscrip",
+      nameAr: "الاشتراكات",
+      nameEn: "Subscriptions ",
+    },
     { key: "faq", href: "/#faq", nameAr: "الاسئلة", nameEn: "FAQ" },
     {
       key: "contact",

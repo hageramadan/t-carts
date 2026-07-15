@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "components/sections/PartnersSection.jsx", "components/sections/Contact.jsx", "components/sections/PricingCards.jsx"  ],
+, "components/sections/PartnersSection.jsx", "components/sections/Contact.jsx", "components/sections/PricingCards.jsx", "components/sections/Features.jsx"  ],
   "exclude": ["node_modules"]
 }

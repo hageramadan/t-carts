@@ -12,7 +12,7 @@ const cairo = Cairo({
   weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-cairo",
   display: "swap",
-});
+});  
 
 export const metadata: Metadata = {
   title: "متجر إلكتروني متكامل -  أمتلك منظومة بيع متكاملة.. تملكها بالكامل بدون اشتراكات أو عمولات",

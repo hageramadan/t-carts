@@ -61,20 +61,22 @@ const FAQSection = () => {
     <section id="faq" className="py-16 overflow-hidden bg-[#E8F4F4]">
       <div className="container mx-auto px-1 md:px-8">
         {/* العنوان العلوي للسكشن */}
-        <div className="mb-8 text-center lg:text-start">
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#025049] mb-2">
-            {t("faq.title")}
-          </h1>
-        </div>
+    
         <div className="flex flex-col lg:flex-row md:items-start items-center gap-8 lg:gap-12 justify-between">
-          {/* المحتوى في اليمين - عرض 760px كحد أقصى */}
+          {/* المحتوى في اليمين - 2/3 من المساحة */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex-1 w-full lg:max-w-[760px]"
+            className="w-full lg:w-2/3"
           >
+            <div className="mb-8 text-center lg:text-start">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#025049] mb-2">
+                {t("faq.title")}
+              </h1>
+            </div>
+            
             {/* قائمة الأسئلة */}
             <div className="space-y-6 gap-[24px]">
               {faqs.map((faq, index) => (
@@ -175,7 +177,7 @@ const FAQSection = () => {
             </div>
           </motion.div>
 
-          {/* الفورم في الشمال */}
+          {/* الفورم - 1/3 من المساحة */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileHover={{
@@ -188,9 +190,9 @@ const FAQSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex w-full lg:w-[424px] flex-shrink-0 mx-auto lg:mx-0"
+            className="w-full lg:w-1/3 flex-shrink-0"
           >
-            <div className="relative w-full lg:w-[424px] mx-auto">
+            <div className="relative w-full mx-auto">
               <ContactForm
                 countries={countries}
                 onSubmit={handleFormSubmit}

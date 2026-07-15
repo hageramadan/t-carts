@@ -19,8 +19,8 @@ const Hero = () => {
       badge: "التحول الرقمي في السعودية",
 
       title: `أمتلك منظومة بيع متكاملة.. تبدأ من 7,000 جنيه فقط.`,
-      description: `ابدأ البيع أونلاين خلال ايام مع دومين واستضافة مجانية لمدة سنة، بدون اشتراكات او عمولات`,
-      cta: "ابدأ متجرك الآن",
+      description: `ابدأ البيع أونلاين خلال 48 ساعة مع دومين واستضافة مجانية لمدة سنة، بدون اشتراكات او عمولات.`,
+      cta: "ابدأ رحلة توسعك الآن",
       demo: "شاهد النماذج",
       stats1: "مشروع منجز",
       stats2: "دول مختلفة",
@@ -31,7 +31,7 @@ const Hero = () => {
       title: "own a complete sales system.. starting from only 7,000 EGP.",
       description:
         "Start selling online within days with a free domain and hosting for one year, with no subscriptions or commissions.",
-      cta: "Start Your Store Now",
+    cta: "Start Your Growth Journey Now",
       demo: "View Our Work",
       stats1: "Projects Completed",
       stats2: "Different Countries",

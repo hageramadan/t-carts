@@ -48,7 +48,7 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
       {data.badge && (
         <div
           className={`
-          absolute -top-3  ${lang === "ar" ? "right-1/3 lg:right-1/3" : "left-4"} 
+          absolute -top-3  ${lang === "ar" ? "right-1/3 lg:right-1/3" : "left-1/3 lg:left-1/3"} 
           bg-[#EF8913] text-white  
           px-4 lg:px-8 py-0.5 lg:py-1 rounded-2xl shadow-lg text-[10px] lg:text-base
           flex items-center gap-1.5 
@@ -285,7 +285,7 @@ export default function PricingCards() {
   };
 
   return (
-    <section className="py-16 px-4 md:px-8 lg:py-12" dir={lang === "ar" ? "rtl" : "ltr"}>
+    <section id="subscrip" className="py-16 px-4 md:px-8 lg:py-12" dir={lang === "ar" ? "rtl" : "ltr"}>
       <div className="text-center mb-8 lg:mb-12">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
