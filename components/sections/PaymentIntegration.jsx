@@ -57,6 +57,9 @@ const PaymentIntegration = () => {
     { id: 4, name: "Apple Pay", icon: "/images/payment/valu.png" },
     { id: 5, name: "Google Pay", icon: "/images/payment/stc.png" },
     { id: 6, name: "STC Pay", icon: "/images/payment/cash.png" },
+    { id: 7, name: "tamara", icon: "/images/payment/tamara.png" },
+    { id: 8, name: "tabby", icon: "/images/payment/tabby.png" },
+    { id: 9, name: "apple Pay", icon: "/images/payment/apple_pay.png" },
   ];
 
   return (
