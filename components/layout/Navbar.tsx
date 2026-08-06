@@ -134,12 +134,7 @@ const Navbar = () => {
       nameAr: "المميزات",
       nameEn: "features",
     },
-     {
-      key: "projects",
-      href: "/#projects",
-      nameAr: "النماذج",
-      nameEn: "Projects",
-    },
+    
      {
       key: "dashboard",
       href: "/#dashboard",
@@ -157,6 +152,12 @@ const Navbar = () => {
       href: "/#subscrip",
       nameAr: "الاشتراكات",
       nameEn: "Subscriptions ",
+    },
+     {
+      key: "projects",
+      href: "/#projects",
+      nameAr: "النماذج",
+      nameEn: "Projects",
     },
     { key: "faq", href: "/#faq", nameAr: "الاسئلة", nameEn: "FAQ" },
     {

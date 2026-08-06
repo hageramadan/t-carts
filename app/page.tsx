@@ -26,12 +26,13 @@ export default function Home() {
       <FirstSearch />
       {/* <Features /> */}
       <NeedToSuccess />
-      <ChooseDesign />
+      
       <PaymentIntegration/>
 
       <StoreFeaturesSection />
       <GooglePlay />
       <PricingCards />
+      <ChooseDesign />
       <FAQSection />
       <CallToAction />
     </>

@@ -206,7 +206,7 @@ const PaymentIntegration = () => {
                   {paymentMethods.map((method, index) => (
                     <motion.div
                       key={method.id}
-                      className="relative flex items-center justify-center gap-3 lg:gap-6 py-1 lg:py-6 cursor-pointer"
+                      className="relative mb-7 lg:mb-0 flex items-center justify-center gap-3 lg:gap-6 py-1 lg:py-6 cursor-pointer"
                       initial={{ opacity: 0, scale: 1 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.3 + index * 0.05 }}

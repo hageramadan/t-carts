@@ -57,7 +57,7 @@ const GooglePlay = () => {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2 flex items-center order-2 md:order-1"
           >
-            <motion.div className="px-4 md:px-6 lg:px-10 w-full pb-3">
+            <motion.div className=" w-full pb-3">
               {/* Main Title */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ const GooglePlay = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-base sm:text-lg md:text-xl lg:text-[24px] text-white mb-2 md:mb-5 leading-relaxed"
+                className="text-xl sm:text-base  md:text-xl lg:text-[24px] text-white mb-2 md:mb-5 "
                 style={{ lineHeight: 1.6 }}
               >
                 {t.description}

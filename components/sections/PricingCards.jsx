@@ -40,7 +40,7 @@ const PricingCard = ({ data, isHighlighted, index, lang = "ar" }) => {
         w-full max-w-sm mx-auto
         group
         h-full
-        min-h-[300px] md:min-h-[400px]
+        min-h-[350px] md:min-h-[400px]
       `}
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
